@@ -1,7 +1,7 @@
 {
     "buildCommand": "cd client && npm run build",
     "outputDirectory": "client/build",
-    "installCommand": "git submodule update --init --recursive && npm run install-all",
+    "installCommand": "npm run install-all",
     "rewrites": [
         {
             "source": "/(.*)",
