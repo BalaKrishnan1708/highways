@@ -11,10 +11,14 @@ const Schedule = () => {
                     <div className="tab">DAY 3</div>
                 </div>
                 <div className="schedule-content">
-                    <div className="tbd-message">
-                        <i className="fas fa-clock"></i>
-                        <h3>Timelines are being finalized!</h3>
-                        <p>Stay tuned for the full event schedule.</p>
+                    <div className="scroll-roller left"></div>
+                    <div className="scroll-roller right"></div>
+                    <div className="schedule-content-scroll">
+                        <div className="tbd-message">
+                            <i className="fas fa-clock"></i>
+                            <h3>Timelines are being finalized!</h3>
+                            <p>Stay tuned for the full event schedule.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -61,6 +61,7 @@ const Home = () => {
         <div className="home-page">
             {/* World 1: Red (Edo Traditional) */}
             <section id="home" className="hero world-red">
+                <div className="shimenawa-rope"></div>
                 <div className="fuji-motif"></div>
                 <div className="lantern-row">
                     <Lantern delay="0s" left="5%" />
@@ -81,6 +82,7 @@ const Home = () => {
                     <div className="torii-gate-frame">
                         <h1 className="hero-title-main floating-neon">
                             <span className="title-japan text-glitch" data-text="ハイウェイズ">ハイウェイズ</span>
+                            <span className="title-carnival">MATSURI</span>
                         </h1>
                     </div>
 
@@ -94,7 +96,7 @@ const Home = () => {
                             <div className="countdown-item"><span>{timeLeft.minutes.toString().padStart(2, '0')}</span><p>Mins</p></div>
                         </div>
                         <div className="date-badge">TBD</div>
-                        <p className="hero-tagline">Where Tradition Meets the Future of Celebration</p>
+                        <p className="hero-tagline">WHERE TRADITION MEETS THE FUTURE</p>
                     </div>
                     <div className="hero-btns">
                         <a href="https://www.acesvce.in/" className="btn-matsuri" target="_blank" rel="noopener noreferrer">Get Your Pass</a>
@@ -103,6 +105,7 @@ const Home = () => {
                 </div>
 
                 <div className="hero-bottom-decor"></div>
+                <div className="wave-divider" style={{ position: 'absolute', bottom: 0 }}></div>
             </section>
 
 

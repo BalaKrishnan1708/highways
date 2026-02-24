@@ -17,8 +17,8 @@ const About = () => {
                     </div>
                     <div className="about-image-container">
                         <div className="image-frame">
-                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=800&q=80" alt="Carnival Vibe" className="main-about-img" />
-                            <div className="accent-circle"></div>
+                            <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=800&q=80" alt="Carnival Vibe" className="main-about-img" style={{ width: '100%', border: '5px solid var(--murasaki)', boxShadow: '15px 15px 0 var(--kin)' }} />
+                            <div className="hanko-stamp">HIGHWAYS 2026</div>
                         </div>
                     </div>
                 </div>

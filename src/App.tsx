@@ -20,16 +20,17 @@ import Sponsors from './pages/Sponsors';
 
 function App() {
   useEffect(() => {
-    const createRipple = (e: MouseEvent) => {
-      const ripple = document.createElement('div');
-      ripple.className = 'ripple-effect';
-      ripple.style.left = `${e.clientX}px`;
-      ripple.style.top = `${e.clientY}px`;
-      document.body.appendChild(ripple);
-      setTimeout(() => ripple.remove(), 800);
+    const createSlash = (e: MouseEvent) => {
+      const slash = document.createElement('div');
+      slash.className = 'katana-slash';
+      slash.style.left = `${e.clientX}px`;
+      slash.style.top = `${e.clientY}px`;
+      slash.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+      document.body.appendChild(slash);
+      setTimeout(() => slash.remove(), 600);
     };
 
-    window.addEventListener('click', createRipple);
+    window.addEventListener('mousedown', createSlash);
 
     return () => {
       window.removeEventListener('click', createRipple);
