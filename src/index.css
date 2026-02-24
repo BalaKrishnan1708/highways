@@ -1,0 +1,41 @@
+:root {
+  --midnight: #0D1117;
+  --kin: #FFB703;
+  --murasaki: #EF233C;
+  --cyan: #00D4FF;
+  --gofun: #EDF2F4;
+  --indigo: #161B22;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Noto Sans JP', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--midnight);
+  color: var(--gofun);
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--midnight);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--murasaki);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kin);
+}
