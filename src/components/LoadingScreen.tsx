@@ -72,11 +72,8 @@ const LoadingScreen: React.FC = () => {
                 </div>
 
                 <div className="title-container">
-                    <div className="svce-top-left">
-                        <CinematicTitle text="SVCE" delay={0.5} />
-                    </div>
                     <div className="opening-title">
-                        <CinematicTitle text="HIGHWAYS '26" delay={1.8} />
+                        <CinematicTitle text="SVCE HIGHWAYS '26" delay={1.2} />
                     </div>
                 </div>
 

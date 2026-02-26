@@ -121,18 +121,35 @@
 }
 
 .opening-title {
-    font-size: 3.5rem;
+    font-size: clamp(1.8rem, 6vw, 3.8rem);
     font-weight: 900;
-    letter-spacing: 15px;
-    margin-bottom: 10px;
+    letter-spacing: clamp(5px, 2vw, 15px);
+    margin-bottom: 20px;
     font-family: 'Outfit', sans-serif;
+    background: linear-gradient(to bottom, #ff4c4c 0%, #a00000 50%, #4a0000 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 0px rgba(42, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.animated-word {
+    display: flex;
+    gap: clamp(4px, 1.5vw, 12px);
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .opening-sub {
-    font-size: 1rem;
-    letter-spacing: 8px;
-    color: #555;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    letter-spacing: clamp(4px, 1.5vw, 8px);
+    color: #d4af37;
+    /* Gold tint */
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .title-container {
@@ -143,20 +160,9 @@
     margin-top: 20px;
 }
 
-.svce-top-left {
-    position: absolute;
-    top: -30px;
-    left: 0;
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: #EF233C;
-    letter-spacing: 4px;
-}
+/* Removed .svce-top-left styles */
 
-.animated-word {
-    display: flex;
-    gap: 8px;
-}
+
 
 .character-roll {
     display: inline-block;
