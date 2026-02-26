@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Sponsors = () => {
     return (
         <section id="sponsors" className="sponsors-section world-pink" style={{ paddingTop: '150px' }}>

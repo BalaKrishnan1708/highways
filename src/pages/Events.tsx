@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const Events = () => {
     return (
         <section id="events" className="events-categories world-red" style={{ paddingTop: '150px', minHeight: '100vh' }}>

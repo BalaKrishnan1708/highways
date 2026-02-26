@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Hitodama = ({ world }: { world: string }) => {
     const [wisps, setWisps] = useState<any[]>([]);

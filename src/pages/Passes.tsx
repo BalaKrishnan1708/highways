@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Passes = () => {
     return (
         <section id="passes" className="passes-section world-red" style={{ paddingTop: '150px', minHeight: '100vh' }}>
