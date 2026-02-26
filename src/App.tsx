@@ -23,7 +23,6 @@ function App() {
   const [world, setWorld] = React.useState('heikai');
 
   useEffect(() => {
-    const worlds = ['heikai', 'wakai', 'hankai'];
     const interval = setInterval(() => {
       setWorld((prev: string) => {
         const worlds = ['heikai', 'wakai', 'hankai'];
