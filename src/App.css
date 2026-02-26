@@ -223,6 +223,23 @@
   text-transform: uppercase;
 }
 
+/* Section World Skins (per-page) */
+.world-white {
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.7) 100%);
+  color: var(--gofun);
+}
+
+.world-pink {
+  background: radial-gradient(circle at top, rgba(255, 183, 197, 0.18) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(45, 9, 24, 0.9) 0%, var(--midnight) 100%);
+}
+
+.world-red {
+  background: radial-gradient(circle at center, rgba(239, 35, 60, 0.16) 0%, transparent 55%),
+    linear-gradient(180deg, #050608 0%, #0b0e14 50%, #050608 100%);
+}
+
 .shimenawa-rope {
   display: none;
   /* Removed as requested/cleanup */
@@ -630,6 +647,11 @@ body.menu-open {
   border-bottom: 2px solid var(--kin);
 }
 
+.navbar.mobile-nav-open {
+  background: rgba(3, 3, 5, 0.98);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.9);
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -640,6 +662,64 @@ body.menu-open {
 
 .mobile-toggle {
   display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  border-color: var(--kin);
+  box-shadow: 0 0 15px rgba(255, 183, 3, 0.4);
+}
+
+.mobile-toggle .bar {
+  position: relative;
+  width: 18px;
+  height: 2px;
+  background: var(--gofun);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.mobile-toggle .bar::before,
+.mobile-toggle .bar::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: var(--gofun);
+  border-radius: 2px;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.mobile-toggle .bar::before {
+  top: -6px;
+}
+
+.mobile-toggle .bar::after {
+  top: 6px;
+}
+
+.mobile-toggle .bar.animate {
+  background: transparent;
+}
+
+.mobile-toggle .bar.animate::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mobile-toggle .bar.animate::after {
+  top: 0;
+  transform: rotate(-45deg);
 }
 
 .logo-container {
@@ -2071,6 +2151,94 @@ body.menu-open {
   letter-spacing: 1px;
 }
 
+/* Location Section */
+.location-section {
+  padding: 120px 0;
+}
+
+.location-flex {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.map-container {
+  flex: 1.2;
+  min-height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  transform-origin: center;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease, border-color 0.4s ease;
+}
+
+.map-container:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--kin);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.9), 0 0 30px rgba(255, 183, 3, 0.3);
+}
+
+.address-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.address-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.address-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+
+.address-link:hover {
+  border-color: var(--kin);
+  background: rgba(0, 0, 0, 0.7);
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(255, 183, 3, 0.3);
+}
+
+.maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--kin);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-details {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.contact-details p {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-details i {
+  color: var(--cyan);
+}
+
 /* Team Section */
 .team-section {
   padding: 100px 0;
@@ -2644,6 +2812,20 @@ section.reveal-active::after {
 
   .pass-card {
     max-width: 100%;
+  }
+
+  /* Location - Mobile */
+  .location-flex {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .map-container {
+    min-height: 260px;
+  }
+
+  .address-info {
+    text-align: left;
   }
 
   /* Footer Adjustments */
