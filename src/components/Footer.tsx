@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import svceLogo from '../assets/svce-logo.png';
 

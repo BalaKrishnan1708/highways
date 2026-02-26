@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Glimpses = () => {
     const images = [
         '1.JPG', '2.webp', '3.JPG', '4.webp', '5.JPG', '6.webp', '7.JPG', '8.png', '9.png', '10.png',

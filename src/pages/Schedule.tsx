@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Schedule = () => {
     return (
         <section id="schedule" className="schedule-section world-white" style={{ paddingTop: '150px', minHeight: '100vh' }}>
