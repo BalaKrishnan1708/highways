@@ -8,8 +8,8 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <img src={svceLogo} alt="SVCE" className="footer-logo" />
-                        <h3>HIGHWAYS '26</h3>
+                        <img src={svceLogo} alt="SVCE" className="footer-logo-svce" />
+                        <h3 className="footer-text-branding">HIGHWAYS '26</h3>
                     </div>
 
                     <div className="footer-links-group" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
@@ -18,8 +18,9 @@ const Footer = () => {
                         <Link to="/events">Events</Link>
                         <a href="https://www.acesvce.in/" target="_blank" rel="noopener noreferrer">Passes</a>
                         <Link to="/schedule">Schedule</Link>
-                        <Link to="/location">Location</Link>
                         <Link to="/sponsors">Sponsors</Link>
+                        <Link to="/team">Team</Link>
+                        <Link to="/location">Location</Link>
                     </div>
 
                     <div className="footer-social">

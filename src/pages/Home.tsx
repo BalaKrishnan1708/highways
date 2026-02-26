@@ -12,7 +12,7 @@ const Lantern = ({ delay = '0s', left = '0%' }: { delay?: string, left?: string 
     </div>
 );
 
-const Home = () => {
+const Home = ({ world = 'heikai' }: { world?: string }) => {
     const [timeLeft, setTimeLeft] = useState({ days: 25, hours: 0, minutes: 0 });
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const Home = () => {
     return (
         <div className="home-page">
             {/* World 1: Red (Edo Traditional) */}
-            <section id="home" className="hero world-red">
+            <section id="home" className="hero">
                 <div className="shimenawa-rope"></div>
                 <div className="fuji-motif"></div>
                 <div className="lantern-row">
@@ -82,7 +82,8 @@ const Home = () => {
                     <div className="torii-gate-frame">
                         <h1 className="hero-title-main floating-neon">
                             <span className="title-japan text-glitch" data-text="ハイウェイズ">ハイウェイズ</span>
-                            <span className="title-carnival">MATSURI</span>
+                            <span className="title-japan-sub">エスブイシーイー</span>
+                            <span className="title-carnival">{world.toUpperCase()}</span>
                         </h1>
                     </div>
 
@@ -111,7 +112,7 @@ const Home = () => {
 
 
             {/* World 3: White (Parchment/History) */}
-            <section id="glimpses" className="glimpses-section world-white">
+            <section id="glimpses" className="glimpses-section">
                 <div className="section-header">
                     <h2 className="section-title center">PAST GLIMPSES</h2>
                 </div>
@@ -181,7 +182,7 @@ const Home = () => {
             </section>
 
             {/* World 2: Pink (Zen/Sakura) */}
-            <section id="celebrity" className="celebrity-section world-pink">
+            <section id="celebrity" className="celebrity-section">
                 <div className="container">
                     <h2 className="section-title center">CELEBRITY GUESTS</h2>
                     <div className="celebrity-grid">

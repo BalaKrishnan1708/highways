@@ -17,9 +17,21 @@ import Passes from './pages/Passes';
 import Schedule from './pages/Schedule';
 import Location from './pages/Location';
 import Sponsors from './pages/Sponsors';
+import Team from './pages/Team';
 
 function App() {
+  const [world, setWorld] = React.useState('heikai');
+
   useEffect(() => {
+    const worlds = ['heikai', 'wakai', 'hankai'];
+    const interval = setInterval(() => {
+      setWorld((prev: string) => {
+        const worlds = ['heikai', 'wakai', 'hankai'];
+        const currentIndex = worlds.indexOf(prev);
+        return worlds[(currentIndex + 1) % worlds.length];
+      });
+    }, 10000);
+
     const createSlash = (e: MouseEvent) => {
       const slash = document.createElement('div');
       slash.className = 'katana-slash';
@@ -33,31 +45,38 @@ function App() {
     window.addEventListener('mousedown', createSlash);
 
     return () => {
-      window.removeEventListener('click', createRipple);
+      clearInterval(interval);
+      window.removeEventListener('mousedown', createSlash);
     };
   }, []);
 
   return (
     <Router>
-      <div className="App">
+      <div className={`App world-${world}`}>
         <LoadingScreen />
+
+        {/* World Overlays */}
+        <div className="world-overlay heikai-overlay"></div>
+        <div className="world-overlay wakai-overlay"></div>
+        <div className="world-overlay hankai-overlay"></div>
 
         {/* Global Japan Texture Overlay */}
         <div className="matsuri-overlay"></div>
-        <SakuraEffect />
-        <Hitodama />
+        <SakuraEffect world={world} />
+        <Hitodama world={world} />
 
         <Navbar />
 
         <div className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home world={world} />} />
             <Route path="/about" element={<About />} />
             <Route path="/events" element={<Events />} />
             <Route path="/passes" element={<Passes />} />
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/location" element={<Location />} />
             <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/team" element={<Team />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </div>

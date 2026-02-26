@@ -1,25 +1,24 @@
 import React, { useEffect, useState } from 'react';
 
-const Hitodama = () => {
+const Hitodama = ({ world }: { world: string }) => {
     const [wisps, setWisps] = useState<any[]>([]);
 
     useEffect(() => {
-        const wispCount = 12;
+        const wispCount = world === 'hankai' ? 20 : 12;
         const newWisps = Array.from({ length: wispCount }).map((_, i) => ({
             id: i,
             left: Math.random() * 100 + '%',
             top: Math.random() * 100 + '%',
-            size: Math.random() * 60 + 20 + 'px',
+            size: world === 'hankai' ? Math.random() * 15 + 10 + 'px' : Math.random() * 60 + 20 + 'px',
             duration: Math.random() * 20 + 15 + 's',
-            delay: Math.random() * -20 + 's', // Random start phase
-            color: i % 3 === 0 ? 'var(--murasaki)' : (i % 3 === 1 ? 'var(--cyan)' : 'var(--kin)'),
-            drift: Math.random() * 200 - 100 + 'px'
+            delay: Math.random() * -20 + 's',
+            color: world === 'hankai' ? '#ff2400' : (world === 'heikai' ? 'var(--heikai-accent)' : '#00d2ff'),
         }));
         setWisps(newWisps);
-    }, []);
+    }, [world]);
 
     return (
-        <div className="hitodama-container">
+        <div className={`hitodama-container world-${world}`}>
             {wisps.map(w => (
                 <div
                     key={w.id}
@@ -32,7 +31,8 @@ const Hitodama = () => {
                         backgroundColor: w.color,
                         animationDuration: w.duration,
                         animationDelay: w.delay,
-                        filter: `blur(${parseInt(w.size) / 2}px)`
+                        filter: `blur(${parseInt(w.size) / 2}px) brightness(1.5)`,
+                        boxShadow: `0 0 30px ${w.color}`
                     }}
                 />
             ))}
