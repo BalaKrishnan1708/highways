@@ -1939,306 +1939,7 @@ body.menu-open {
 }
 
 /* Mobile Responsive */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-    cursor: auto !important;
-    /* Standard cursor for mobile */
-  }
-
-  *::before,
-  *::after,
-  .btn-matsuri,
-  .btn-outline,
-  .nav-cta,
-  .nav-link {
-    cursor: auto !important;
-  }
-
-  .container {
-    padding: 0 15px;
-  }
-
-  .hero {
-    padding: 80px 0 40px;
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .torii-gate-frame {
-    padding: 20px 10px;
-    border-top-width: 10px;
-  }
-
-  .torii-gate-frame::before,
-  .torii-gate-frame::after {
-    width: 8px;
-  }
-
-  .hero-title-main {
-    font-size: 2.5rem;
-  }
-
-  .title-japan {
-    font-size: 3rem;
-    letter-spacing: 5px;
-    margin-bottom: 0.5rem;
-  }
-
-  .highways-26-text {
-    font-size: 2.2rem;
-  }
-
-  .hero-tagline {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    gap: 15px;
-    width: 90%;
-    margin: 2rem auto;
-  }
-
-  .btn-matsuri,
-  .btn-outline {
-    width: 100%;
-    padding: 15px;
-    font-size: 1rem;
-  }
-
-  .countdown-container {
-    gap: 10px;
-    transform: scale(0.9);
-  }
-
-  .countdown-item {
-    padding: 10px 15px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hanko-stamp {
-    width: 60px;
-    height: 60px;
-    font-size: 0.8rem;
-    padding: 5px;
-    bottom: 10px;
-    right: 10px;
-  }
-
-  .schedule-content {
-    padding: 30px 15px;
-    border-left-width: 8px;
-    border-right-width: 8px;
-    margin: 20px 0;
-  }
-
-  .glimpse-card {
-    width: 280px;
-    height: 200px;
-  }
-
-  .stat-count {
-    font-size: 2.5rem;
-  }
-
-  .stat-desc {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-  }
-
-  .about-flex {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-    text-align: center;
-  }
-
-  .about-highlights {
-    justify-content: center;
-  }
-
-  .category-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .glimpse-card {
-    width: 250px;
-    height: 200px;
-  }
-
-  .pass-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .pass-card {
-    width: 100%;
-    max-width: none;
-  }
-
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-brand {
-    max-width: 100%;
-  }
-
-  .nav-container {
-    padding: 0 15px;
-    width: 100%;
-  }
-
-  .logo-img {
-    height: 40px;
-  }
-
-  .brand-highways {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-  }
-
-  .brand-year {
-    font-size: 0.7rem;
-  }
-
-  /* Mobile Menu Styles */
-  .mobile-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    z-index: 1001;
-    border: 1px solid var(--kin);
-    background: rgba(239, 35, 60, 0.1);
-    border-radius: 4px;
-  }
-
-  .bar {
-    width: 20px;
-    height: 2px;
-    background-color: var(--kin);
-    transition: 0.3s;
-    position: relative;
-  }
-
-  .bar::before,
-  .bar::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 2px;
-    background-color: var(--kin);
-    transition: 0.3s;
-  }
-
-  .bar::before {
-    transform: translateY(-7px);
-  }
-
-  .bar::after {
-    transform: translateY(7px);
-  }
-
-  .bar.animate {
-    background-color: transparent;
-    border-color: transparent;
-  }
-
-  .bar.animate::before {
-    transform: rotate(45deg);
-  }
-
-  .bar.animate::after {
-    transform: rotate(-45deg);
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 85%;
-    height: 100vh;
-    background: rgba(8, 10, 15, 0.98);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    z-index: 1000;
-    border-left: 2px solid var(--murasaki);
-  }
-
-  .nav-links.mobile-active {
-    right: 0;
-  }
-
-  .nav-link {
-    font-size: 1.2rem;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255, 183, 3, 0.1);
-    color: var(--gofun);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-link.active {
-    color: var(--kin);
-    background: rgba(255, 183, 3, 0.05);
-    border-bottom-color: var(--kin);
-  }
-
-  .nav-kanji {
-    font-size: 0.9rem;
-    margin-top: 5px;
-  }
-
-  .nav-cta {
-    margin-top: 20px;
-    width: 200px;
-    text-align: center;
-    font-size: 1.1rem;
-    padding: 12px;
-  }
-
-  .lantern-row {
-    display: none;
-    /* Too cluttered on mobile */
-  }
-
-  .celebrity-grid {
-    gap: 20px;
-  }
-
-  .celebrity-card {
-    width: 100%;
-  }
-
-  .faq-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
+/* Consolidated Master Responsiveness at the bottom */
 
 /* Celebrity Section */
 .celebrity-section {
@@ -2740,120 +2441,273 @@ section.reveal-active::after {
 }
 
 /* Global Device Responsiveness (Android, iPhone, Mac, Windows) */
-@media screen and (max-width: 1024px) {
-  .hero-title-main {
-    font-size: 2.2rem;
+/* --- PERFECT MOBILE RESPONSIVENESS MASTER BLOCK --- */
+@media screen and (max-width: 768px) {
+  :root {
+    --container-padding: 20px;
+  }
+
+  body {
+    cursor: auto !important;
+  }
+
+  .container {
+    padding: 0 var(--container-padding);
+  }
+
+  /* Navbar Adjustments */
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo-img-svce {
+    height: 32px;
   }
 
   .brand-highways {
     font-size: 1rem;
+    text-shadow: 1px 1px 0px #2a0000;
   }
 
   .brand-year {
     font-size: 0.75rem;
   }
 
+  /* Mobile Menu - High-End Aesthetic */
+  .mobile-toggle {
+    display: flex;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+    z-index: 1000;
+    padding: 40px;
+  }
+
+  .nav-links.mobile-active {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gofun);
+    border-bottom: 2px solid transparent;
+    padding: 10px 0;
+    width: fit-content;
+  }
+
+  .nav-link.active {
+    color: var(--kin);
+    border-bottom-color: var(--kin);
+  }
+
+  /* Hero Section - Proportional 3D Scaling */
+  .hero {
+    padding: 100px 0 60px;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-title-main {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.2;
+  }
+
+  .title-japan {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    letter-spacing: 4px;
+    margin-bottom: 0.3rem;
+  }
+
+  .title-japan-sub {
+    font-size: 0.8rem;
+    letter-spacing: 6px;
+    margin-top: -5px;
+  }
+
+  .title-carnival {
+    font-size: clamp(2rem, 10vw, 3rem);
+    margin-top: 10px;
+  }
+
   .highways-26-text {
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+    letter-spacing: 5px;
+    margin-top: 15px;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+    max-width: 90%;
+    margin: 1.5rem auto;
+    line-height: 1.6;
+    letter-spacing: 1px;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .btn-matsuri,
+  .btn-outline {
+    width: 80%;
+    max-width: 280px;
+    padding: 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Stats & Countdown */
+  .countdown-container {
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  .countdown-item {
+    min-width: 60px;
+    padding: 10px;
+  }
+
+  .countdown-item span {
+    font-size: 1.3rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10%;
+  }
+
+  .stat-item {
+    border-left: 3px solid var(--kin);
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  /* Grids & Cards */
+  .category-grid,
+  .event-grid,
+  .sponsors-grid,
+  .team-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 10px;
+    gap: 25px;
   }
 
   .about-flex {
     flex-direction: column;
-    gap: 30px;
+    text-align: center;
+    gap: 40px;
   }
 
-  .event-main-content {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  .event-header-visual {
-    height: 250px;
-    padding: 20px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .about-highlights {
+    justify-content: center;
     gap: 15px;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .highlight {
+    font-size: 0.8rem;
+    padding: 10px 15px;
   }
 
-  .highways-26-text {
-    font-size: 2rem;
+  .glimpse-card {
+    width: 250px;
+    height: 180px;
+    border-width: 2px;
   }
 
-  .hero-title-main {
-    font-size: 1.8rem;
+  .pass-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pass-card {
+    max-width: 100%;
+  }
+
+  /* Footer Adjustments */
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    align-items: center;
+  }
+
+  .footer-logo-svce {
+    height: 50px;
   }
 
   .footer-text-branding {
     font-size: 1.5rem;
-    margin-left: 5px;
+    margin-top: 10px;
+    margin-left: 0;
   }
 
-  .countdown-container {
-    gap: 5px;
-    flex-wrap: wrap;
+  .footer-links-group {
     justify-content: center;
+    gap: 15px !important;
   }
 
-  .countdown-item {
-    padding: 8px 12px;
-    min-width: 70px;
+  /* World Overlays for Mobile */
+  .world-overlay {
+    background-size: cover;
   }
 
-  .countdown-item span {
-    font-size: 1.2rem;
+  /* Line Alignments & Spacing */
+  section {
+    padding: 80px 0 !important;
   }
 
-  .nav-links {
-    width: 100%;
+  .section-title {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
   }
 
-  .category-grid {
+  .section-title::after {
+    width: 60px;
+  }
+
+  .faq-grid {
     grid-template-columns: 1fr;
-  }
-
-  .glimpse-card {
-    width: 280px;
-    height: 180px;
-  }
-
-  .container {
-    padding: 0 15px;
+    gap: 20px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .hero-title-main {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
+  }
+
+  .title-japan {
+    font-size: 2.5rem;
   }
 
   .highways-26-text {
-    font-size: 2rem;
-  }
-
-  .stat-count {
-    font-size: 3rem;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn-matsuri,
-  .btn-outline {
-    width: 100%;
-    text-align: center;
-  }
-
-  .event-header-visual {
-    height: 250px;
+    font-size: 1.8rem;
   }
 }
