@@ -15,7 +15,7 @@
 .shoji-door {
     position: absolute;
     top: 0;
-    width: 50%;
+    width: 51%;
     height: 100%;
     background: #fdf5e6;
     /* Traditional Gofun white */
@@ -30,12 +30,12 @@
 
 .shoji-door.left {
     left: 0;
-    border-right-width: 7.5px;
+    border-right: none;
 }
 
 .shoji-door.right {
     right: 0;
-    border-left-width: 7.5px;
+    border-left: none;
 }
 
 .shoji-door.left.open {
