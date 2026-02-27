@@ -34,38 +34,15 @@ function App() {
       slash.style.top = `${e.clientY}px`
       slash.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`
       document.body.appendChild(slash)
+
       setTimeout(() => slash.remove(), 600)
     }
 
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('reveal-active');
-        }
-      });
-    }, observerOptions);
-
-    const observeElements = () => {
-      document.querySelectorAll('.reveal, section').forEach(el => {
-        observer.observe(el);
-      });
-    };
-
-    observeElements();
     window.addEventListener('mousedown', createSlash)
-
-    const handleRouteChange = () => {
-      setTimeout(observeElements, 300);
-    };
-
-    window.addEventListener('popstate', handleRouteChange);
 
     return () => {
       clearInterval(interval)
       window.removeEventListener('mousedown', createSlash)
-      window.removeEventListener('popstate', handleRouteChange);
-      observer.disconnect();
     }
   }, [])
 

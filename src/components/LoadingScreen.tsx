@@ -83,9 +83,15 @@ const LoadingScreen: React.FC = () => {
             </div>
 
             <div className={`loading-center-content ${!isLoading ? 'zoom-out' : ''}`}>
+                <div className="spirit-orb-container">
+                    <div className="spirit-orb s1"></div>
+                    <div className="spirit-orb s2"></div>
+                    <div className="spirit-orb s3"></div>
+                </div>
+
                 <div className="mon-logo">
                     <div className="circle-border"></div>
-                    <span className="kanji">日本</span>
+                    <span className="kanji hand-drawn">日本</span>
                 </div>
 
                 <div className="title-container">
@@ -94,11 +100,7 @@ const LoadingScreen: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="opening-sub">ENTERING THE REALM</div>
-
-                <div className="progress-bar-container">
-                    <div className="progress-bar" style={{ animationDuration: '5.5s' }}></div>
-                </div>
+                <div className="opening-sub pulsing-text">ENTERING THE REALM</div>
             </div>
 
             <div className="sakura-transition">
@@ -110,7 +112,7 @@ const LoadingScreen: React.FC = () => {
                     }}></div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -4,14 +4,14 @@ const Team = () => {
     const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
 
     const teams = [
-        { id: 'emcee', name: 'EMCEE', members: ['Aravind R', 'Sanjana S', 'Manoj K'] },
-        { id: 'tech', name: 'TECH', members: ['Bala Krishnan', 'Vishan K', 'Dhanush M', 'Surya P'] },
-        { id: 'vigilance', name: 'VIGILANCE', members: ['Rahul G', 'Praveen S', 'Vikram V'] },
-        { id: 'hospitality', name: 'HOSPITALITY', members: ['Ananya R', 'Deepak B', 'Swetha M'] },
-        { id: 'finance', name: 'FINANCE', members: ['Karthik S', 'Divya P'] },
-        { id: 'creative', name: 'CREATIVE', members: ['Harish M', 'Nivetha S', 'Arun K'] },
-        { id: 'media', name: 'MEDIA', members: ['Siddharth R', 'Meghana S', 'Varun G'] },
-        { id: 'events', name: 'EVENTS', members: ['Sanjay T', 'Pooja R', 'Ganesh K'] },
+        { id: 'emcee', name: 'EMCEE', members: ['Member 1', 'Member 2', 'Member 3'] },
+        { id: 'tech', name: 'TECH', members: ['Dev 1', 'Dev 2', 'Dev 3', 'Dev 4'] },
+        { id: 'vigilance', name: 'VIGILANCE', members: ['Guard 1', 'Guard 2'] },
+        { id: 'hospitality', name: 'HOSPITALITY', members: ['Host 1', 'Host 2', 'Host 3'] },
+        { id: 'finance', name: 'FINANCE', members: ['Treasurer 1', 'Treasurer 2'] },
+        { id: 'creative', name: 'CREATIVE', members: ['Artist 1', 'Artist 2'] },
+        { id: 'media', name: 'MEDIA', members: ['Photog 1', 'Photog 2'] },
+        { id: 'events', name: 'EVENTS', members: ['Coord 1', 'Coord 2'] },
     ];
 
     return (
@@ -20,11 +20,10 @@ const Team = () => {
                 <h2 className="section-title center">MYSTIC DIVISIONS</h2>
 
                 <div className="team-categories">
-                    {teams.map((team, i) => (
+                    {teams.map((team) => (
                         <button
                             key={team.id}
-                            className={`team-btn reveal ${selectedTeam === team.id ? 'active' : ''}`}
-                            style={{ transitionDelay: `${i * 0.05}s` }}
+                            className={`team-btn ${selectedTeam === team.id ? 'active' : ''}`}
                             onClick={() => setSelectedTeam(team.id)}
                         >
                             {team.name}
@@ -33,16 +32,16 @@ const Team = () => {
                 </div>
 
                 {selectedTeam && (
-                    <div className="members-reveal">
-                        <h3 className="team-sub-title">{teams.find(t => t.id === selectedTeam)?.name} CLAN</h3>
+                    <div className="members-reveal magic-fade-in">
+                        <h3 className="team-sub-title glow-gold">{teams.find(t => t.id === selectedTeam)?.name} CLAN</h3>
                         <div className="team-grid">
                             {teams.find(t => t.id === selectedTeam)?.members.map((member, idx) => (
-                                <div key={idx} className="team-card reveal-active">
-                                    <div className="team-photo-placeholder">
-                                        <div className="member-avatar">☯</div>
+                                <div key={idx} className="team-card reveal-active floating-member" style={{ animationDelay: `${idx * 0.15}s` }}>
+                                    <div className="team-photo-placeholder burst-border">
+                                        <div className="member-avatar kinetic-icon">☯</div>
                                     </div>
-                                    <h3>{member}</h3>
-                                    <p>Official Member</p>
+                                    <h3 className="member-name">{member}</h3>
+                                    <p className="member-status">Official Keeper</p>
                                 </div>
                             ))}
                         </div>
