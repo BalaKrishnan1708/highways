@@ -11,6 +11,9 @@ import LoadingScreen from './components/LoadingScreen'
 
 // Pages
 import Home from './pages/Home'
+import Events from './pages/Events'
+import Sponsors from './pages/Sponsors'
+import Team from './pages/Team'
 
 function App() {
   const [world, setWorld] = useState<'heikai' | 'wakai' | 'hankai'>('heikai')
@@ -64,6 +67,9 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home world={world} />} />
+            <Route path="/events" element={<Events />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+            <Route path="/team" element={<Team />} />
             <Route path="*" element={<Home world={world} />} />
           </Routes>
         </main>

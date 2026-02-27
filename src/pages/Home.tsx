@@ -98,8 +98,7 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                         <p className="hero-tagline">WHERE TRADITION MEETS THE FUTURE</p>
                     </div>
                     <div className="hero-btns">
-                        <a href="https://www.acesvce.in/" className="btn-matsuri" target="_blank" rel="noopener noreferrer">Get Your Pass</a>
-                        <a href="#glimpses" className="btn-outline">Explore More</a>
+                        <a href="#glimpses" className="btn-matsuri">Explore More</a>
                     </div>
                 </div>
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import svceLogo from '../assets/svce-logo.png';
 
 const Footer = () => {
@@ -11,12 +12,11 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-links-group" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                        <a href="#hero">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#celebrities">Celebrities</a>
-                        <a href="#glimpses">Glimpses</a>
+                        <Link to="/">Home</Link>
+                        <Link to="/events">Events</Link>
                         <a href="https://www.acesvce.in/" target="_blank" rel="noopener noreferrer">Passes</a>
-                        <a href="#location">Location</a>
+                        <Link to="/sponsors">Sponsors</Link>
+                        <Link to="/team">Team</Link>
                     </div>
 
                     <div className="footer-social">

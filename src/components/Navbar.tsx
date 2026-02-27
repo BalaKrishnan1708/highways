@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import svceLogo from '../assets/svce-logo.png';
 
 const Navbar = () => {
@@ -32,42 +33,34 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-nav-open' : ''}`}>
             <div className="nav-container">
-                <a href="#hero" className="logo-container" style={{ textDecoration: 'none' }} onClick={closeMobileMenu}>
+                <Link to="/" className="logo-container" style={{ textDecoration: 'none' }} onClick={closeMobileMenu}>
                     <img src={svceLogo} alt="SVCE Logo" className="logo-img-svce" />
                     <div className="brand-text-single">
                         <span className="brand-highways">HIGHWAYS</span>
                         <span className="brand-year">'26</span>
                     </div>
-                </a>
+                </Link>
 
                 <div className="mobile-toggle" onClick={toggleMobileMenu}>
                     <div className={`bar ${mobileMenuOpen ? 'animate' : ''}`}></div>
                 </div>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-                    <a href="#hero" className="nav-link" onClick={closeMobileMenu}>
-                        <span>Home</span>
-                    </a>
-
-                    <a href="#about" className="nav-link" onClick={closeMobileMenu}>
-                        <span>About</span>
-                    </a>
-
-                    <a href="#celebrities" className="nav-link" onClick={closeMobileMenu}>
-                        <span>Celebrities</span>
-                    </a>
-
-                    <a href="#glimpses" className="nav-link" onClick={closeMobileMenu}>
-                        <span>Glimpses</span>
-                    </a>
+                    <Link to="/events" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Events</span>
+                    </Link>
 
                     <a href="https://www.acesvce.in/" className="nav-link" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
                         <span>Get Passes</span>
                     </a>
 
-                    <a href="#location" className="nav-link" onClick={closeMobileMenu}>
-                        <span>Location</span>
-                    </a>
+                    <Link to="/sponsors" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Sponsors</span>
+                    </Link>
+
+                    <Link to="/team" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Team</span>
+                    </Link>
 
                     <a href="https://www.acesvce.in/" className="nav-cta" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>Register</a>
                 </div>
