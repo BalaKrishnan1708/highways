@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './LoadingScreen.css';
 
 const CinematicTitle: React.FC<{ text: string, className?: string, delay?: number }> = ({ text, className, delay = 0 }) => {

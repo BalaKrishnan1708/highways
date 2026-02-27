@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Celebrities = () => {
     return (
         <section id="celebrity" className="celebrity-section" style={{ paddingTop: '150px' }}>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Team = () => {
     const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
