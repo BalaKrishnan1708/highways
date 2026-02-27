@@ -14,12 +14,13 @@ const Events = () => {
                         { title: 'Lite', kanji: '文芸', icon: 'fa-feather', desc: 'Lyrical & Literary Talents' },
                         { title: 'Quiz', kanji: '知識', icon: 'fa-lightbulb', desc: 'General & Themed Quizzes' }
                     ].map((cat, i) => (
-                        <div key={i} className="category-card">
-                            <div className="cat-icon"><i className={`fas ${cat.icon}`}></i></div>
+                        <div key={i} className="category-card reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
+                            <div className="cat-icon floating-element"><i className={`fas ${cat.icon}`}></i></div>
                             <div className="kanji-sub">{cat.kanji}</div>
                             <h3>{cat.title}</h3>
+                            <div className="card-divider"></div>
                             <p>{cat.desc}</p>
-                            <span className="cat-link">View Details</span>
+                            <span className="cat-link">Enter Domain</span>
                         </div>
                     ))}
                 </div>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -98,7 +99,7 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                         <p className="hero-tagline">WHERE TRADITION MEETS THE FUTURE</p>
                     </div>
                     <div className="hero-btns">
-                        <a href="#glimpses" className="btn-matsuri">Explore More</a>
+                        <Link to="/events" className="btn-matsuri">Explore Events</Link>
                     </div>
                 </div>
 

@@ -5,7 +5,7 @@ const Sponsors = () => {
                 <h2 className="section-title center">OUR PARTNERS</h2>
                 <div className="sponsors-grid">
                     {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
-                        <div key={i} className="sponsor-placeholder">
+                        <div key={i} className="sponsor-placeholder reveal" style={{ transitionDelay: `${i * 0.1}s` }}>
                             Sponsor {i}
                         </div>
                     ))}

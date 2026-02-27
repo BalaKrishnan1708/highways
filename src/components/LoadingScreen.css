@@ -56,16 +56,7 @@
     opacity: 1;
 }
 
-.vertical-line {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 6px;
-    height: 100%;
-    background: #1a1a1a;
-    transform: translateX(-50%);
-    z-index: 15;
-}
+/* Vertical lines removed as requested */
 
 .loading-center-content {
     position: relative;
@@ -168,8 +159,8 @@
     display: inline-block;
     opacity: 0;
     transform: translate(var(--startX), var(--startY)) rotate(var(--startRot)) scale(4);
-    animation: CinematicCharacterIn 2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-    filter: blur(20px);
+    animation: CinematicCharacterIn 2s steps(18) forwards;
+    filter: blur(15px);
 }
 
 @keyframes CinematicCharacterIn {
@@ -212,18 +203,10 @@
     width: 100%;
     height: 100%;
     background: #EF233C;
-    animation: loading 2.5s ease-in-out forwards;
+    animation: loading 2.5s steps(12) forwards;
 }
 
-.progress-line-red {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 50%;
-    background: #EF233C;
-    box-shadow: 0 0 10px #EF233C;
-}
+/* Progress line removed */
 
 .sakura-transition {
     position: absolute;
@@ -244,7 +227,7 @@
 }
 
 .fade-out .transition-petal {
-    animation: petal-burst 1s forwards;
+    animation: petal-burst 1.2s steps(10) forwards;
 }
 
 .fade-out {
@@ -283,4 +266,42 @@
         transform: scale(2) rotate(45deg);
         opacity: 0;
     }
+}
+
+/* Floating Clouds for Loading */
+.loading-wrapper::before,
+.loading-wrapper::after {
+    content: '☁';
+    position: absolute;
+    font-size: 8rem;
+    color: rgba(0, 0, 0, 0.03);
+    pointer-events: none;
+    z-index: 5;
+    animation: cloudMove 20s linear infinite;
+}
+
+.loading-wrapper::after {
+    top: 20%;
+    left: -10%;
+    animation-delay: -10s;
+}
+
+@keyframes cloudMove {
+    from {
+        transform: translateX(-100%) scale(1);
+    }
+
+    to {
+        transform: translateX(110vw) scale(1.2);
+    }
+}
+
+/* Low-FPS feel for logo spin */
+.circle-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #EF233C;
+    border-radius: 50%;
+    animation: spin 6s steps(24) infinite;
 }

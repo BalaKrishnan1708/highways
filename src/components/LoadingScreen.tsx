@@ -77,11 +77,9 @@ const LoadingScreen: React.FC = () => {
         <div className={`loading-wrapper ${!isLoading ? 'fade-out' : ''}`}>
             <div className={`shoji-door left ${!isLoading ? 'open' : ''}`}>
                 <div className="shoji-pattern"></div>
-                <div className="vertical-line"></div>
             </div>
             <div className={`shoji-door right ${!isLoading ? 'open' : ''}`}>
                 <div className="shoji-pattern"></div>
-                <div className="vertical-line"></div>
             </div>
 
             <div className={`loading-center-content ${!isLoading ? 'zoom-out' : ''}`}>
@@ -100,7 +98,6 @@ const LoadingScreen: React.FC = () => {
 
                 <div className="progress-bar-container">
                     <div className="progress-bar" style={{ animationDuration: '5.5s' }}></div>
-                    <div className="progress-line-red"></div>
                 </div>
             </div>
 

@@ -20,10 +20,11 @@ const Team = () => {
                 <h2 className="section-title center">MYSTIC DIVISIONS</h2>
 
                 <div className="team-categories">
-                    {teams.map((team) => (
+                    {teams.map((team, i) => (
                         <button
                             key={team.id}
-                            className={`team-btn ${selectedTeam === team.id ? 'active' : ''}`}
+                            className={`team-btn reveal ${selectedTeam === team.id ? 'active' : ''}`}
+                            style={{ transitionDelay: `${i * 0.05}s` }}
                             onClick={() => setSelectedTeam(team.id)}
                         >
                             {team.name}

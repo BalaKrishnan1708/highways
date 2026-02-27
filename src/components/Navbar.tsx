@@ -61,8 +61,6 @@ const Navbar = () => {
                     <Link to="/team" className="nav-link" onClick={closeMobileMenu}>
                         <span>Team</span>
                     </Link>
-
-                    <a href="https://www.acesvce.in/" className="nav-cta" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>Register</a>
                 </div>
             </div>
         </nav>
