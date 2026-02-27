@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 
@@ -16,7 +15,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
     const [timeLeft, setTimeLeft] = useState({ days: 25, hours: 0, minutes: 0 });
 
     useEffect(() => {
-        // Calculate target date: 25 days from now (Feb 22 -> March 19)
         const targetDate = new Date();
         targetDate.setDate(targetDate.getDate() + 25);
         targetDate.setHours(targetDate.getHours(), 0, 0, 0);
@@ -59,8 +57,8 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
 
     return (
         <div className="home-page">
-            {/* World 1: Red (Edo Traditional) */}
-            <section id="home" className="hero">
+            {/* HERO SECTION */}
+            <section id="hero" className="hero">
                 <div className="shimenawa-rope"></div>
                 <div className="fuji-motif"></div>
                 <div className="lantern-row">
@@ -101,7 +99,7 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                     </div>
                     <div className="hero-btns">
                         <a href="https://www.acesvce.in/" className="btn-matsuri" target="_blank" rel="noopener noreferrer">Get Your Pass</a>
-                        <Link to="/events" className="btn-outline">Explore Events</Link>
+                        <a href="#glimpses" className="btn-outline">Explore More</a>
                     </div>
                 </div>
 
@@ -109,15 +107,56 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                 <div className="wave-divider" style={{ position: 'absolute', bottom: 0 }}></div>
             </section>
 
+            {/* ABOUT SECTION */}
+            <section id="about" className="about-section world-white" style={{ padding: '100px 0' }}>
+                <div className="container">
+                    <div className="about-flex">
+                        <div className="about-text">
+                            <h2 className="section-title left">OUR HERITAGE</h2>
+                            <p>Highways is the annual intercollegiate cultural festival of Sri Venkateswara College of Engineering (SVCE). Known for its vibrant atmosphere and creative energy, Highways brings together students from across the states to celebrate art, talent, and expression.</p>
+                            <p>This year, for <strong>Highways '26</strong>, we are embracing the spirit of the <em>Japanese Carnival</em>. Imagine the glow of a thousand lanterns, the rhythm of taiko drums, and the festive magic of a Matsuri night, all right here on our campus.</p>
+                            <div className="about-highlights">
+                                <div className="highlight"><i className="fas fa-drum"></i> Cultural Fusion</div>
+                                <div className="highlight"><i className="fas fa-mask"></i> Artistic Expression</div>
+                                <div className="highlight"><i className="fas fa-fire"></i> Infinite Energy</div>
+                            </div>
+                        </div>
+                        <div className="about-image-container">
+                            <div className="image-frame" style={{ position: 'relative' }}>
+                                <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?w=800&q=80" alt="Carnival Vibe" className="main-about-img" style={{ width: '100%', border: '5px solid var(--murasaki)', boxShadow: '15px 15px 0 var(--kin)' }} />
+                                <div className="hanko-stamp">HIGHWAYS 2026</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
+            {/* CELEBRITY GUESS SECTION */}
+            <section id="celebrities" className="celebrity-section" style={{ padding: '100px 0' }}>
+                <div className="container">
+                    <h2 className="section-title center">CELEBRITY GUESS</h2>
+                    <div className="celebrity-grid">
+                        {[1, 2, 3, 4].map(i => (
+                            <div key={i} className="celebrity-card">
+                                <div className="celeb-image-placeholder">
+                                    <span className="mystery-mark">?</span>
+                                </div>
+                                <div className="celeb-info">
+                                    <h3>Mystery Guest {i}</h3>
+                                    <p>Can you guess who's coming?</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-            {/* World 3: White (Parchment/History) */}
-            <section id="glimpses" className="glimpses-section">
+            {/* GLIMPSES SECTION */}
+            <section id="glimpses" className="glimpses-section" style={{ padding: '100px 0' }}>
                 <div className="section-header">
                     <h2 className="section-title center">PAST GLIMPSES</h2>
                 </div>
 
-                {/* Layer 1: Leftward Ticker */}
                 <div className="glimpses-ticker">
                     <div className="ticker-track ltr">
                         {[
@@ -127,7 +166,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                                 <img src={`/assets/glimpses/${img}`} alt="Highways Moment" />
                             </div>
                         ))}
-                        {/* Seamless loop duplicate */}
                         {[
                             '1.JPG', '2.webp', '3.JPG', '4.webp', '5.JPG', '6.webp', '7.JPG', '8.png', '9.png', '10.png', '11.png'
                         ].map((img, i) => (
@@ -138,7 +176,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                     </div>
                 </div>
 
-                {/* Layer 2: Rightward Ticker */}
                 <div className="glimpses-ticker" style={{ marginTop: '20px' }}>
                     <div className="ticker-track rtl">
                         {[
@@ -148,7 +185,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                                 <img src={`/assets/glimpses/${img}`} alt="Highways Moment" />
                             </div>
                         ))}
-                        {/* Seamless loop duplicate */}
                         {[
                             '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png', '20.png', '21.png', '22.png'
                         ].map((img, i) => (
@@ -159,7 +195,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                     </div>
                 </div>
 
-                {/* Layer 3: Leftward Ticker (Bottom) */}
                 <div className="glimpses-ticker" style={{ marginTop: '20px' }}>
                     <div className="ticker-track ltr">
                         {[
@@ -169,7 +204,6 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                                 <img src={`/assets/glimpses/${img}`} alt="Highways Moment" />
                             </div>
                         ))}
-                        {/* Seamless loop duplicate */}
                         {[
                             '23.png', '24.png', '25.png', '26.png', '27.png', '28.png', '29.png', '30.png', '31.png', '32.png', '33.png'
                         ].map((img, i) => (
@@ -181,22 +215,42 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                 </div>
             </section>
 
-            {/* World 2: Pink (Zen/Sakura) */}
-            <section id="celebrity" className="celebrity-section">
+            {/* LOCATION SECTION */}
+            <section id="location" className="location-section world-pink" style={{ padding: '100px 0' }}>
                 <div className="container">
-                    <h2 className="section-title center">CELEBRITY GUESTS</h2>
-                    <div className="celebrity-grid">
-                        {[1, 2, 3, 4].map(i => (
-                            <div key={i} className="celebrity-card">
-                                <div className="celeb-image-placeholder">
-                                    <span className="mystery-mark">?</span>
-                                </div>
-                                <div className="celeb-info">
-                                    <h3>Mystery Guest {i}</h3>
-                                    <p>To be revealed soon!</p>
-                                </div>
+                    <h2 className="section-title center">REACH US</h2>
+                    <div className="location-flex">
+                        <div className="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.003612503936!2d79.9917300750764!3d12.971658987343513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528cc004473855%3A0x738e60477ad5aadb!2sSri%20Venkateswara%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1709456000000!5m2!1sen!2sin"
+                                width="100%"
+                                height="450px"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                title="SVCE Location"
+                            ></iframe>
+                        </div>
+                        <div className="address-info">
+                            <h3>Sri Venkateswara College of Engineering</h3>
+                            <a
+                                href="https://maps.app.goo.gl/1vHZVM7RMqGM5TYA8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="address-link"
+                            >
+                                <p>
+                                    Post Bag No. 1, Chennai - Bengaluru High Road,<br />
+                                    Pennalur, Sriperumbudur,<br />
+                                    Tamil Nadu 602117
+                                </p>
+                                <span className="maps-link">View on Google Maps <i className="fas fa-external-link-alt"></i></span>
+                            </a>
+                            <div className="contact-details">
+                                <p><i className="fas fa-phone"></i> +91 44 2715 2000</p>
+                                <p><i className="fas fa-envelope"></i> highways@svce.ac.in</p>
                             </div>
-                        ))}
+                        </div>
                     </div>
                 </div>
             </section>

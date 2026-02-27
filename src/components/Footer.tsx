@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import svceLogo from '../assets/svce-logo.png';
 
 const Footer = () => {
@@ -12,14 +11,12 @@ const Footer = () => {
                     </div>
 
                     <div className="footer-links-group" style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
-                        <Link to="/">Home</Link>
-                        <Link to="/about">About</Link>
-                        <Link to="/events">Events</Link>
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#celebrities">Celebrities</a>
+                        <a href="#glimpses">Glimpses</a>
                         <a href="https://www.acesvce.in/" target="_blank" rel="noopener noreferrer">Passes</a>
-                        <Link to="/schedule">Schedule</Link>
-                        <Link to="/sponsors">Sponsors</Link>
-                        <Link to="/team">Team</Link>
-                        <Link to="/location">Location</Link>
+                        <a href="#location">Location</a>
                     </div>
 
                     <div className="footer-social">
@@ -32,7 +29,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom">
-                    <p>&copy; 2026 Highways SVCE. All Rights Reserved. <span className="made-by">Theme: Imperial Japanese</span></p>
+                    <p>&copy; 2026 Highways SVCE. All Rights Reserved.</p>
                 </div>
             </div>
         </footer>

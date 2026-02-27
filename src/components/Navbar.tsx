@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
 import svceLogo from '../assets/svce-logo.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const location = useLocation();
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,50 +32,42 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'mobile-nav-open' : ''}`}>
             <div className="nav-container">
-                <Link to="/" className="logo-container" style={{ textDecoration: 'none' }} onClick={closeMobileMenu}>
+                <a href="#hero" className="logo-container" style={{ textDecoration: 'none' }} onClick={closeMobileMenu}>
                     <img src={svceLogo} alt="SVCE Logo" className="logo-img-svce" />
-                    <div className="brand-text">
+                    <div className="brand-text-single">
                         <span className="brand-highways">HIGHWAYS</span>
                         <span className="brand-year">'26</span>
                     </div>
-                </Link>
+                </a>
 
                 <div className="mobile-toggle" onClick={toggleMobileMenu}>
                     <div className={`bar ${mobileMenuOpen ? 'animate' : ''}`}></div>
                 </div>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
-                    <Link to="/" className={`nav-link ${location.pathname === '/' && !location.hash ? 'active' : ''}`} onClick={closeMobileMenu}>
+                    <a href="#hero" className="nav-link" onClick={closeMobileMenu}>
                         <span>Home</span>
-                    </Link>
+                    </a>
 
-                    <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                    <a href="#about" className="nav-link" onClick={closeMobileMenu}>
                         <span>About</span>
-                    </Link>
+                    </a>
 
-                    <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active' : ''}`} onClick={closeMobileMenu}>
-                        <span>Events</span>
-                    </Link>
+                    <a href="#celebrities" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Celebrities</span>
+                    </a>
+
+                    <a href="#glimpses" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Glimpses</span>
+                    </a>
 
                     <a href="https://www.acesvce.in/" className="nav-link" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
                         <span>Get Passes</span>
                     </a>
 
-                    <Link to="/schedule" className={`nav-link ${location.pathname === '/schedule' ? 'active' : ''}`} onClick={closeMobileMenu}>
-                        <span>Schedule</span>
-                    </Link>
-
-                    <Link to="/sponsors" className={`nav-link ${location.pathname === '/sponsors' ? 'active' : ''}`} onClick={closeMobileMenu}>
-                        <span>Sponsors</span>
-                    </Link>
-
-                    <Link to="/team" className={`nav-link ${location.pathname === '/team' ? 'active' : ''}`} onClick={closeMobileMenu}>
-                        <span>Team</span>
-                    </Link>
-
-                    <Link to="/location" className={`nav-link ${location.pathname === '/location' ? 'active' : ''}`} onClick={closeMobileMenu}>
+                    <a href="#location" className="nav-link" onClick={closeMobileMenu}>
                         <span>Location</span>
-                    </Link>
+                    </a>
 
                     <a href="https://www.acesvce.in/" className="nav-cta" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>Register</a>
                 </div>
