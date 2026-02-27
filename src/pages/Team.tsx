@@ -4,14 +4,14 @@ const Team = () => {
     const [selectedTeam, setSelectedTeam] = useState<string | null>(null);
 
     const teams = [
-        { id: 'emcee', name: 'EMCEE', members: ['Member 1', 'Member 2', 'Member 3'] },
-        { id: 'tech', name: 'TECH', members: ['Dev 1', 'Dev 2', 'Dev 3', 'Dev 4'] },
-        { id: 'vigilance', name: 'VIGILANCE', members: ['Guard 1', 'Guard 2'] },
-        { id: 'hospitality', name: 'HOSPITALITY', members: ['Host 1', 'Host 2', 'Host 3'] },
-        { id: 'finance', name: 'FINANCE', members: ['Treasurer 1', 'Treasurer 2'] },
-        { id: 'creative', name: 'CREATIVE', members: ['Artist 1', 'Artist 2'] },
-        { id: 'media', name: 'MEDIA', members: ['Photog 1', 'Photog 2'] },
-        { id: 'events', name: 'EVENTS', members: ['Coord 1', 'Coord 2'] },
+        { id: 'emcee', name: 'EMCEE', members: ['Aravind R', 'Sanjana S', 'Manoj K'] },
+        { id: 'tech', name: 'TECH', members: ['Bala Krishnan', 'Vishan K', 'Dhanush M', 'Surya P'] },
+        { id: 'vigilance', name: 'VIGILANCE', members: ['Rahul G', 'Praveen S', 'Vikram V'] },
+        { id: 'hospitality', name: 'HOSPITALITY', members: ['Ananya R', 'Deepak B', 'Swetha M'] },
+        { id: 'finance', name: 'FINANCE', members: ['Karthik S', 'Divya P'] },
+        { id: 'creative', name: 'CREATIVE', members: ['Harish M', 'Nivetha S', 'Arun K'] },
+        { id: 'media', name: 'MEDIA', members: ['Siddharth R', 'Meghana S', 'Varun G'] },
+        { id: 'events', name: 'EVENTS', members: ['Sanjay T', 'Pooja R', 'Ganesh K'] },
     ];
 
     return (

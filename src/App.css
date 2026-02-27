@@ -2466,31 +2466,98 @@ section::after {
   padding-bottom: 100px;
 }
 
+/* Sponsors Page Styles - Tiered */
+.tier-section {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.tier-title {
+  color: var(--kin);
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(255, 183, 3, 0.3);
+  position: relative;
+  display: inline-block;
+}
+
+.tier-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: var(--kin);
+}
+
 .sponsors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
-  margin-top: 50px;
-}
-
-.sponsor-placeholder {
-  height: 150px;
-  background: #161B22;
-  border: 1px solid var(--kin);
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-weight: 700;
-  color: var(--kin);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.sponsor-placeholder:hover {
-  transform: translateY(-5px) scale(1.02);
-  background: #21262D;
-  box-shadow: 0 10px 25px var(--gold-glow);
+.sponsors-grid.luxury {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sponsors-grid.premium {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.sponsor-card {
+  background: rgba(22, 27, 34, 0.6);
+  border: 1px solid rgba(255, 183, 3, 0.2);
+  padding: 30px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.sponsor-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: var(--kin);
+  background: rgba(22, 27, 34, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.logo-placeholder {
+  font-size: 3rem;
+  color: var(--kin);
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.sponsor-card:hover .logo-placeholder {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(255, 183, 3, 0.15);
+  border-color: var(--kin);
+}
+
+.silver-glow {
+  box-shadow: 0 0 30px rgba(200, 200, 200, 0.1);
+  border-color: #c0c0c0;
+}
+
+.sponsor-card p {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  color: var(--gofun);
 }
 
 /* Event Detail Page Styles */
