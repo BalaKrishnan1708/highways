@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -94,7 +93,7 @@ const Footer = () => {
           padding: '80px 6% 20px',
           position: 'relative',
           zIndex: 2,
-          overflow: 'hidden', 
+          overflow: 'hidden',
         }}
       >
         <div className="footer-top-grid">
@@ -164,7 +163,7 @@ const Footer = () => {
 
         {/* Bottom Section: Giant Text & Copyright Reordered */}
         <div style={{ width: '100%', textAlign: 'center' }}>
-          
+
           {/* The Giant Animated Text */}
           <h1 className="giant-footer-text">HIGHWAYS'26</h1>
 
@@ -178,7 +177,7 @@ const Footer = () => {
               paddingTop: '20px',
             }}
           >
-            © 2026 HIGHWAYS SVCE. 
+            © 2026 HIGHWAYS SVCE.
           </div>
         </div>
       </footer>
