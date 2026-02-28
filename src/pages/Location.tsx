@@ -6,7 +6,7 @@ const Location = () => {
                 <div className="location-flex">
                     <div className="map-container">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.003612503936!2d79.9917300750764!3d12.971658987343513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a528cc004473855%3A0x738e60477ad5aadb!2sSri%20Venkateswara%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1709456000000!5m2!1sen!2sin"
+                            src="https://www.google.com/maps?q=Post+Bag+No.+1,+Chennai+-+Bengaluru+High+Road,+Pennalur,+Sriperumbudur,+Tamil+Nadu+602117&output=embed"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -30,10 +30,7 @@ const Location = () => {
                             </p>
                             <span className="maps-link">View on Google Maps <i className="fas fa-external-link-alt"></i></span>
                         </a>
-                        <div className="contact-details">
-                            <p><i className="fas fa-phone"></i> +91 44 2715 2000</p>
-                            <p><i className="fas fa-envelope"></i> highways@svce.ac.in</p>
-                        </div>
+
                     </div>
                 </div>
             </div>

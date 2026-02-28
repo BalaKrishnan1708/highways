@@ -127,21 +127,17 @@ const Footer = () => {
             {/* Column 1: Navigation */}
             <div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-                <li><Link to="/" className="footer-nav-link">Home</Link></li>
-                <li><Link to="/about" className="footer-nav-link">About</Link></li>
                 <li><Link to="/events" className="footer-nav-link">Events</Link></li>
-                <li><Link to="/passes" className="footer-nav-link">Passes</Link></li>
-                <li><Link to="/schedule" className="footer-nav-link">Schedule</Link></li>
+                <li><a href="https://www.acesvce.in/" className="footer-nav-link">Get Passes</a></li>
                 <li><Link to="/sponsors" className="footer-nav-link">Sponsors</Link></li>
                 <li><Link to="/team" className="footer-nav-link">Team</Link></li>
-                <li><Link to="/location" className="footer-nav-link">Location</Link></li>
               </ul>
             </div>
 
             {/* Column 2: Event / Contact Info */}
             <div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-                <li><a href="mailto:highways@svce.ac.in" className="footer-nav-link">highways@svce.ac.in</a></li>
+
                 <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Highways 26</li>
                 <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Sri Venkateswara</li>
                 <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>College</li>
@@ -153,9 +149,7 @@ const Footer = () => {
             {/* Column 3: Socials */}
             <div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-                <li><a href="#" className="footer-nav-link">Instagram</a></li>
-                <li><a href="#" className="footer-nav-link">LinkedIn</a></li>
-                <li><a href="#" className="footer-nav-link">Twitter / X</a></li>
+                <li><a href="https://www.instagram.com/svce_highways?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="footer-nav-link" target="_blank" rel="noopener noreferrer">Instagram</a></li>
               </ul>
             </div>
           </div>
