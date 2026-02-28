@@ -1,3 +1,4 @@
+import MovieGallery from '@/components/MovieGallery';
 import { useEffect, useState } from 'react';
 
 
@@ -151,7 +152,11 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
             </section>
 
             {/* GLIMPSES SECTION */}
-            <section id="glimpses" className="glimpses-section" style={{ padding: '100px 0' }}>
+            <MovieGallery />
+
+
+            {/* GLIMPSES SECTION */}
+            {/* <section id="glimpses" className="glimpses-section" style={{ padding: '100px 0' }}>
                 <div className="section-header">
                     <h2 className="section-title center">PAST GLIMPSES</h2>
                 </div>
@@ -212,7 +217,7 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* LOCATION SECTION */}
             <section id="location" className="location-section world-pink" style={{ padding: '100px 0' }}>
