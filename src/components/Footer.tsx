@@ -50,37 +50,76 @@ const Footer = () => {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
+            grid-template-columns: 1.2fr 1fr 1fr 1fr;
+            gap: 40px;
             padding-bottom: 60px;
           }
 
-          .footer-links-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            gap: 40px;
+          .footer-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            opacity: 0.4;
+            font-weight: 700;
           }
 
-          .brand-container {
+          .footer-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column;
+            gap: 12px;
+          }
+
+          .footer-circle-logo {
+            width: 100px;
+            height: 100px;
+            border: 1px dashed rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+          }
+
+          .logo-text {
+            font-size: 1.2rem;
+            font-family: serif;
+            letter-spacing: 2px;
+            margin: 0;
+          }
+
+          .logo-est {
+            font-size: 0.5rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+          }
+
+          .brand-tagline p {
+            font-family: serif;
+            font-size: 1.1rem;
+            margin: 0;
           }
 
           /* Media query to stack layout on mobile devices */
-          @media (max-width: 850px) {
+          @media (max-width: 950px) {
             .footer-top-grid {
-              grid-template-columns: 1fr; /* Stacks Logo and Links */
-              gap: 40px;
-              padding-bottom: 40px;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 50px;
             }
-            .footer-links-grid {
-              grid-template-columns: 1fr; /* Stacks the 3 links columns */
-              gap: 30px;
-              text-align: center; /* Centers text for a cleaner mobile look */
+          }
+
+          @media (max-width: 550px) {
+            .footer-top-grid {
+              grid-template-columns: 1fr;
+              text-align: center;
             }
-            .brand-container {
-              justify-content: center; /* Centers the SVCE circle on mobile */
+            .brand-section, .footer-circle-logo {
+              margin-left: auto;
+              margin-right: auto;
             }
           }
         `}
@@ -97,61 +136,45 @@ const Footer = () => {
         }}
       >
         <div className="footer-top-grid">
-          {/* Left Side: Brand / Emblem Area */}
-          <div className="brand-container">
-            <div
-              style={{
-                width: '140px',
-                height: '140px',
-                border: '1px dashed rgba(255,255,255,0.3)',
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                padding: '20px'
-              }}
-            >
-              <h2 style={{ margin: 0, letterSpacing: '3px', fontSize: '1.5rem', fontFamily: 'serif' }}>
-                SVCE
-              </h2>
-              <span style={{ fontSize: '0.65rem', opacity: 0.8, marginTop: '8px', letterSpacing: '1px', fontWeight: 'bold' }}>
-                EST. 2026
-              </span>
+          {/* Section 1: Brand Identity */}
+          <div className="brand-section">
+            <div className="footer-circle-logo">
+              <h2 className="logo-text">SVCE</h2>
+              <span className="logo-est">EST. 2026</span>
+            </div>
+            <div className="brand-tagline">
+              <p>Highways 2026</p>
+              <p className="opacity-50 text-[0.7rem] uppercase tracking-[2px]">Sacred Carnival</p>
             </div>
           </div>
 
-          {/* Right Side: 3-Column Navigation & Info */}
-          <div className="footer-links-grid">
-            {/* Column 1: Navigation */}
-            <div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-                <li><Link to="/events" className="footer-nav-link">Events</Link></li>
-                <li><a href="https://www.acesvce.in/" className="footer-nav-link">Get Passes</a></li>
-                <li><Link to="/sponsors" className="footer-nav-link">Sponsors</Link></li>
-                <li><Link to="/team" className="footer-nav-link">Team</Link></li>
-              </ul>
-            </div>
+          {/* Section 2: Quick Navigation */}
+          <div className="nav-section">
+            <h4 className="footer-heading">Navigate</h4>
+            <ul className="footer-links-list">
+              <li><Link to="/events" className="footer-nav-link">Events</Link></li>
+              <li><a href="https://www.acesvce.in/" className="footer-nav-link" target="_blank" rel="noopener noreferrer">Get Passes</a></li>
+              <li><Link to="/sponsors" className="footer-nav-link">Sponsors</Link></li>
+              <li><Link to="/team" className="footer-nav-link">Team</Link></li>
+            </ul>
+          </div>
 
-            {/* Column 2: Event / Contact Info */}
-            <div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Highways 26</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem', marginTop: '10px' }}>Sri Venkateswara</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem' }}>College</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem' }}>Of Engineering</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem', marginTop: '10px' }}>Tamil Nadu, India</li>
-              </ul>
+          {/* Section 3: Location Info */}
+          <div className="location-section">
+            <h4 className="footer-heading">Reach Us</h4>
+            <div className="location-details text-[0.85rem] leading-[2] opacity-70 font-bold">
+              <p>Sri Venkateswara</p>
+              <p>College Of Engineering</p>
+              <p>Tamil Nadu, India</p>
             </div>
+          </div>
 
-            {/* Column 3: Socials */}
-            <div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
-                <li><a href="https://www.instagram.com/svce_highways?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="footer-nav-link" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              </ul>
-            </div>
+          {/* Section 4: Connect */}
+          <div className="connect-section">
+            <h4 className="footer-heading">Social</h4>
+            <ul className="footer-links-list">
+              <li><a href="https://www.instagram.com/svce_highways?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="footer-nav-link" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
           </div>
         </div>
 
