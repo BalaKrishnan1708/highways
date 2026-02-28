@@ -5,7 +5,7 @@ const CinematicTitle: React.FC<{ text: string, className?: string, delay?: numbe
     return (
         <div className={`animated-word ${className}`}>
             {text.split('').map((char, i) => {
-                // Determine which side to come from (0: Top, 1: Right, 2: Bottom, 3: Left)
+                const offset = 2000;
                 const angle = Math.random() * Math.PI * 2;
                 const distance = offset + Math.random() * 1000;
                 const startX = Math.cos(angle) * distance;
