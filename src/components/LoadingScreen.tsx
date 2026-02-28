@@ -5,11 +5,30 @@ const CinematicTitle: React.FC<{ text: string, className?: string, delay?: numbe
     return (
         <div className={`animated-word ${className}`}>
             {text.split('').map((char, i) => {
-                const offset = 2000;
-                const angle = Math.random() * Math.PI * 2;
-                const distance = offset + Math.random() * 1000;
-                const startX = Math.cos(angle) * distance;
-                const startY = Math.sin(angle) * distance;
+                // Determine which side to come from (0: Top, 1: Right, 2: Bottom, 3: Left)
+                const side = Math.floor(Math.random() * 4);
+                let startX = 0;
+                let startY = 0;
+                const offset = 2000; // Far off-screen
+
+                switch (side) {
+                    case 0: // Top
+                        startX = (Math.random() - 0.5) * 5000;
+                        startY = -offset;
+                        break;
+                    case 1: // Right
+                        startX = offset;
+                        startY = (Math.random() - 0.5) * 5000;
+                        break;
+                    case 2: // Bottom
+                        startX = (Math.random() - 0.5) * 5000;
+                        startY = offset;
+                        break;
+                    case 3: // Left
+                        startX = -offset;
+                        startY = (Math.random() - 0.5) * 5000;
+                        break;
+                }
 
 
 
@@ -20,8 +39,8 @@ const CinematicTitle: React.FC<{ text: string, className?: string, delay?: numbe
                         style={{
                             '--startX': `${startX}px`,
                             '--startY': `${startY}px`,
-                            '--startRot': `${Math.random() * 720 - 360}deg`,
-                            animationDelay: `${delay + i * 0.25}s`,
+                            '--startRot': `${Math.random() * 1440 - 720}deg`,
+                            animationDelay: `${delay + i * (Math.random() * 0.4)}s`,
                             whiteSpace: char === ' ' ? 'pre' : 'normal'
                         } as React.CSSProperties}
                     >
