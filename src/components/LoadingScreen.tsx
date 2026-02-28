@@ -6,29 +6,10 @@ const CinematicTitle: React.FC<{ text: string, className?: string, delay?: numbe
         <div className={`animated-word ${className}`}>
             {text.split('').map((char, i) => {
                 // Determine which side to come from (0: Top, 1: Right, 2: Bottom, 3: Left)
-                const side = Math.floor(Math.random() * 4);
-                let startX = 0;
-                let startY = 0;
-                const offset = 2000; // Far off-screen
-
-                switch (side) {
-                    case 0: // Top
-                        startX = (Math.random() - 0.5) * 3000;
-                        startY = -offset;
-                        break;
-                    case 1: // Right
-                        startX = offset;
-                        startY = (Math.random() - 0.5) * 3000;
-                        break;
-                    case 2: // Bottom
-                        startX = (Math.random() - 0.5) * 3000;
-                        startY = offset;
-                        break;
-                    case 3: // Left
-                        startX = -offset;
-                        startY = (Math.random() - 0.5) * 3000;
-                        break;
-                }
+                const angle = Math.random() * Math.PI * 2;
+                const distance = offset + Math.random() * 1000;
+                const startX = Math.cos(angle) * distance;
+                const startY = Math.sin(angle) * distance;
 
 
 

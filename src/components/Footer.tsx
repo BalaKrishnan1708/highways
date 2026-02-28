@@ -59,7 +59,7 @@ const Footer = () => {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            text-transform: uppercase;
+            gap: 40px;
           }
 
           .brand-container {
@@ -139,10 +139,10 @@ const Footer = () => {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, lineHeight: '2.8' }}>
 
                 <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Highways 26</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Sri Venkateswara</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>College</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Of Engineering</li>
-                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem' }}>Tamil Nadu, India</li>
+                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem', marginTop: '10px' }}>Sri Venkateswara</li>
+                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem' }}>College</li>
+                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '1.1rem' }}>Of Engineering</li>
+                <li style={{ opacity: 0.7, fontWeight: 'bold', fontSize: '0.85rem', marginTop: '10px' }}>Tamil Nadu, India</li>
               </ul>
             </div>
 

@@ -137,7 +137,7 @@
     height: 100%;
     border: 4px solid #EF233C;
     border-radius: 50%;
-    animation: spin 4s linear infinite;
+    animation: none;
 }
 
 .circle-border::before {
@@ -159,7 +159,7 @@
     color: #EF233C;
     font-weight: 900;
     filter: drop-shadow(0 0 10px rgba(239, 35, 60, 0.5));
-    animation: hand-drawn-jitter 0.15s steps(2) infinite;
+    animation: none;
 }
 
 @keyframes hand-drawn-jitter {
@@ -175,7 +175,9 @@
 }
 
 .pulsing-text {
-    animation: text-pulse-glow 3s infinite alternate ease-in-out;
+    animation: none;
+    letter-spacing: 8px;
+    opacity: 0.9;
     text-shadow: 0 0 5px var(--gold-glow);
 }
 
