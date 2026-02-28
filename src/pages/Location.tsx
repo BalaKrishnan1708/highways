@@ -6,7 +6,7 @@ const Location = () => {
                 <div className="location-flex">
                     <div className="map-container">
                         <iframe
-                            src="https://www.google.com/maps?q=Post+Bag+No.+1,+Chennai+-+Bengaluru+High+Road,+Pennalur,+Sriperumbudur,+Tamil+Nadu+602117&output=embed"
+                            src="https://www.google.com/maps?q=Sri+Venkateswara+College+of+Engineering,+Post+Bag+No.1,Pennalur+Village+Chennai+-+Bangaluru+High+Road+Sriperumbudur+Tk,+Tamil+Nadu+602117,+India&output=embed"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
@@ -24,9 +24,10 @@ const Location = () => {
                             className="address-link"
                         >
                             <p>
-                                Post Bag No. 1, Chennai - Bengaluru High Road,<br />
-                                Pennalur, Sriperumbudur,<br />
-                                Tamil Nadu 602117
+                                Sri Venkateswara College of Engineering,<br />
+                                Post Bag No.1, Pennalur Village,<br />
+                                Chennai - Bangaluru High Road,<br />
+                                Sriperumbudur Tk, Tamil Nadu 602117, India
                             </p>
                             <span className="maps-link">View on Google Maps <i className="fas fa-external-link-alt"></i></span>
                         </a>
