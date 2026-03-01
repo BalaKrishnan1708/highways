@@ -13,28 +13,30 @@ const Lantern = ({ delay = '0s', left = '0%' }: { delay?: string, left?: string 
 );
 
 const Home = ({ world = 'heikai' }: { world?: string }) => {
-    const [timeLeft, setTimeLeft] = useState({ days: 25, hours: 0, minutes: 0 });
+    const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
     useEffect(() => {
-        const targetDate = new Date();
-        targetDate.setDate(targetDate.getDate() + 25);
-        targetDate.setHours(targetDate.getHours(), 0, 0, 0);
+        const targetDate = new Date('2026-03-15T00:00:00');
 
-        const timer = setInterval(() => {
+        const updateTimer = () => {
             const now = new Date().getTime();
             const distance = targetDate.getTime() - now;
 
             if (distance < 0) {
-                clearInterval(timer);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
                 return;
             }
 
             setTimeLeft({
                 days: Math.floor(distance / (1000 * 60 * 60 * 24)),
                 hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
+                minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((distance % (1000 * 60)) / 1000)
             });
-        }, 1000);
+        };
+
+        updateTimer();
+        const timer = setInterval(updateTimer, 1000);
 
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
@@ -62,38 +64,57 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
             <section id="hero" className="hero">
                 <div className="shimenawa-rope"></div>
                 <div className="fuji-motif"></div>
-                <div className="lantern-row">
-                    <Lantern delay="0s" left="5%" />
-                    <Lantern delay="0.5s" left="15%" />
-                    <Lantern delay="1.2s" left="25%" />
-                    <Lantern delay="0.8s" left="35%" />
-                    <Lantern delay="1.5s" left="45%" />
-                    <Lantern delay="0.3s" left="55%" />
-                    <Lantern delay="1.1s" left="65%" />
-                    <Lantern delay="0.9s" left="75%" />
-                    <Lantern delay="1.4s" left="85%" />
-                    <Lantern delay="0.6s" left="95%" />
-                </div>
 
                 <div className="hero-content animate-fade">
                     <div className="festival-aura"></div>
-
-                    <div className="torii-gate-frame">
-                        <h1 className="hero-title-main floating-neon">
-                            <span className="title-japan text-glitch" data-text="ハイウェイズ">ハイウェイズ</span>
-                            <span className="title-japan-sub">エスブイシーイー</span>
-                            <span className="title-carnival">{world.toUpperCase()}</span>
-                        </h1>
-                    </div>
 
                     <div className="hero-main-branding">
                         <h2 className="highways-26-text text-glitch" data-text="HIGHWAYS 2026">HIGHWAYS 2026</h2>
                     </div>
                     <div className="hero-info">
-                        <div className="countdown-container">
-                            <div className="countdown-item"><span>{timeLeft.days.toString().padStart(2, '0')}</span><p>Days</p></div>
-                            <div className="countdown-item"><span>{timeLeft.hours.toString().padStart(2, '0')}</span><p>Hours</p></div>
-                            <div className="countdown-item"><span>{timeLeft.minutes.toString().padStart(2, '0')}</span><p>Mins</p></div>
+                        <div className="timer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', justifyContent: 'center', maxWidth: '800px', margin: '0 auto 2rem' }}>
+                            {[
+                                { value: timeLeft.days, label: 'Days', max: 365 },
+                                { value: timeLeft.hours, label: 'Hours', max: 24 },
+                                { value: timeLeft.minutes, label: 'Minutes', max: 60 },
+                                { value: timeLeft.seconds, label: 'Seconds', max: 60 }
+                            ].map(({ value, label, max }) => {
+                                const radius = 65;
+                                const stroke = 8;
+                                const normalizedRadius = radius - stroke;
+                                const circumference = normalizedRadius * 2 * Math.PI;
+                                const offset = circumference - (value / max) * circumference;
+
+                                return (
+                                    <div key={label} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                                        <div style={{ position: 'relative', width: '150px', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', background: 'rgba(0,0,0,0.3)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
+                                            <svg style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)' }} viewBox="0 0 140 140">
+                                                <circle cx="70" cy="70" r={normalizedRadius} stroke="#1f2937" strokeWidth={stroke} fill="transparent" />
+                                                <circle
+                                                    cx="70"
+                                                    cy="70"
+                                                    r={normalizedRadius}
+                                                    stroke="var(--kin)"
+                                                    strokeWidth={stroke}
+                                                    fill="transparent"
+                                                    strokeDasharray={circumference}
+                                                    strokeDashoffset={offset}
+                                                    strokeLinecap="round"
+                                                    style={{ transition: 'stroke-dashoffset 1s linear', filter: 'drop-shadow(0 0 8px var(--kin))' }}
+                                                />
+                                            </svg>
+                                            <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', pointerEvents: 'none' }}>
+                                                <span style={{ fontSize: '2.5rem', fontFamily: 'monospace', fontWeight: 900, color: 'white', lineHeight: 1 }}>
+                                                    {value.toString().padStart(2, '0')}
+                                                </span>
+                                                <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--kin)', marginTop: '4px', fontWeight: 700 }}>
+                                                    {label}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                         <div className="date-badge">TBD</div>
                         <p className="hero-tagline">WHERE TRADITION MEETS THE FUTURE</p>
@@ -219,43 +240,7 @@ const Home = ({ world = 'heikai' }: { world?: string }) => {
                 </div>
             </section> */}
 
-            {/* LOCATION SECTION */}
-            <section id="location" className="location-section world-pink" style={{ padding: '100px 0' }}>
-                <div className="container">
-                    <h2 className="section-title center">REACH US</h2>
-                    <div className="location-flex">
-                        <div className="map-container">
-                            <iframe
-                                src="https://www.google.com/maps?q=Sri+Venkateswara+College+of+Engineering,+Post+Bag+No.1,Pennalur+Village+Chennai+-+Bangaluru+High+Road+Sriperumbudur+Tk,+Tamil+Nadu+602117,+India&output=embed"
-                                width="100%"
-                                height="450px"
-                                style={{ border: 0 }}
-                                allowFullScreen
-                                loading="lazy"
-                                title="SVCE Location"
-                            ></iframe>
-                        </div>
-                        <div className="address-info">
-                            <h3>Sri Venkateswara College of Engineering</h3>
-                            <a
-                                href="https://maps.app.goo.gl/1vHZVM7RMqGM5TYA8"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="address-link"
-                            >
-                                <p>
-                                    Sri Venkateswara College of Engineering,<br />
-                                    Post Bag No.1, Pennalur Village,<br />
-                                    Chennai - Bangaluru High Road,<br />
-                                    Sriperumbudur Tk, Tamil Nadu 602117, India
-                                </p>
-                                <span className="maps-link">View on Google Maps <i className="fas fa-external-link-alt"></i></span>
-                            </a>
 
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };

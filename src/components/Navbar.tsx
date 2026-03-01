@@ -46,6 +46,10 @@ const Navbar = () => {
                 </div>
 
                 <div className={`nav-links ${mobileMenuOpen ? 'mobile-active' : ''}`}>
+                    <Link to="/" className="nav-link" onClick={closeMobileMenu}>
+                        <span>Home</span>
+                    </Link>
+
                     <Link to="/events" className="nav-link" onClick={closeMobileMenu}>
                         <span>Events</span>
                     </Link>
@@ -62,6 +66,9 @@ const Navbar = () => {
                         <span>Team</span>
                     </Link>
 
+                    <Link to="/faq" className="nav-link" onClick={closeMobileMenu}>
+                        <span>FAQ</span>
+                    </Link>
                 </div>
             </div>
         </nav>

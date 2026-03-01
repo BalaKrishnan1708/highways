@@ -6,6 +6,7 @@
   --heikai-text: #fff5f5;
   --heikai-glow: rgba(255, 183, 197, 0.4);
   --heikai-tint: rgba(255, 183, 197, 0.05);
+  --accent-color-rgb: 255, 183, 197;
 
   /* World 2: Wakai - Blue (Neutral/Realm Between) */
   --wakai-bg: #000c1a;
@@ -23,6 +24,22 @@
   --hankai-glow: rgba(255, 0, 0, 0.8);
   --hankai-tint: rgba(255, 0, 0, 0.2);
 
+  /* World 4: Peace - Whitish Blue */
+  --peace-bg: #0a0e1a;
+  --peace-accent: #e0f7ff;
+  --peace-secondary: #87ceeb;
+  --peace-text: #f0f8ff;
+  --peace-glow: rgba(135, 206, 235, 0.5);
+  --peace-tint: rgba(224, 247, 255, 0.1);
+
+  /* World 5: Golden Era */
+  --golden-bg: #1a1410;
+  --golden-accent: #ffd700;
+  --golden-secondary: #ffb703;
+  --golden-text: #fffacd;
+  --golden-glow: rgba(255, 215, 0, 0.6);
+  --golden-tint: rgba(255, 215, 0, 0.15);
+
   /* Dynamic mapping */
   --bg-color: var(--heikai-bg);
   --accent-color: var(--heikai-accent);
@@ -37,10 +54,12 @@
   --midnight: var(--bg-color);
   --accent-glow: var(--glow-color);
   --glass-bg: rgba(255, 255, 255, 0.05);
+
+  transition: all 2s ease;
 }
 
 .App {
-  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 2s ease, color 2s ease;
   min-height: 100vh;
   position: relative;
 }
@@ -54,7 +73,7 @@
   height: 100%;
   pointer-events: none;
   z-index: 5;
-  transition: opacity 1.5s ease;
+  transition: opacity 2s ease;
   opacity: 0;
 }
 
@@ -67,6 +86,14 @@
 }
 
 .world-hankai .hankai-overlay {
+  opacity: 1;
+}
+
+.world-peace .peace-overlay {
+  opacity: 1;
+}
+
+.world-golden .golden-overlay {
   opacity: 1;
 }
 
@@ -119,6 +146,36 @@
   height: 100%;
   background: linear-gradient(0deg, rgba(255, 0, 0, 0.2) 0%, transparent 60%);
   animation: fire-glow 4s infinite alternate;
+}
+
+.peace-overlay {
+  background: radial-gradient(circle at center, rgba(224, 247, 255, 0.15) 0%, transparent 70%);
+  box-shadow: inset 0 0 150px rgba(135, 206, 235, 0.1);
+}
+
+.peace-overlay::before {
+  content: '❄️';
+  position: absolute;
+  font-size: 2rem;
+  top: 15%;
+  right: 25%;
+  opacity: 0.3;
+  animation: float-lantern 10s infinite ease-in-out;
+}
+
+.golden-overlay {
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.2) 0%, transparent 60%);
+  box-shadow: inset 0 0 200px rgba(255, 183, 3, 0.15);
+}
+
+.golden-overlay::before {
+  content: '✨';
+  position: absolute;
+  font-size: 2.5rem;
+  top: 20%;
+  left: 30%;
+  opacity: 0.4;
+  animation: float-lantern 7s infinite ease-in-out;
 }
 
 @keyframes rage-shake {
@@ -189,7 +246,7 @@
   --secondary-color: var(--heikai-secondary);
   --text-color: var(--heikai-text);
   --glow-color: var(--heikai-glow);
-  font-family: 'Sawarabi Mincho', serif;
+  --accent-color-rgb: 255, 183, 197;
 }
 
 .world-wakai {
@@ -198,8 +255,7 @@
   --secondary-color: var(--wakai-secondary);
   --text-color: var(--wakai-text);
   --glow-color: var(--wakai-glow);
-  font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: 3px;
+  --accent-color-rgb: 0, 210, 255;
 }
 
 @keyframes clean-breathe {
@@ -218,9 +274,25 @@
   --secondary-color: var(--hankai-secondary);
   --text-color: var(--hankai-text);
   --glow-color: var(--hankai-glow);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 900;
-  text-transform: uppercase;
+  --accent-color-rgb: 255, 0, 0;
+}
+
+.world-peace {
+  --bg-color: var(--peace-bg);
+  --accent-color: var(--peace-accent);
+  --secondary-color: var(--peace-secondary);
+  --text-color: var(--peace-text);
+  --glow-color: var(--peace-glow);
+  --accent-color-rgb: 135, 206, 235;
+}
+
+.world-golden {
+  --bg-color: var(--golden-bg);
+  --accent-color: var(--golden-accent);
+  --secondary-color: var(--golden-secondary);
+  --text-color: var(--golden-text);
+  --glow-color: var(--golden-glow);
+  --accent-color-rgb: 255, 215, 0;
 }
 
 /* Section World Skins (per-page) */
@@ -296,6 +368,10 @@ html {
   background: var(--kin);
 }
 
+* {
+  transition: background-color 2s ease, color 2s ease, border-color 2s ease, box-shadow 2s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -310,6 +386,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  transition: background-color 2s ease, color 2s ease;
 }
 
 body.menu-open {
@@ -638,7 +715,7 @@ body.menu-open {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 1.2rem 0;
   z-index: 1000;
   transition: all 0.4s ease;
   background: transparent;
@@ -646,7 +723,7 @@ body.menu-open {
 
 .navbar.scrolled {
   background: rgba(8, 10, 15, 0.95);
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
   border-bottom: 2px solid var(--kin);
 }
@@ -733,7 +810,7 @@ body.menu-open {
 }
 
 .logo-img-svce {
-  height: clamp(18px, 1.8vw, 24px);
+  height: clamp(28px, 2.5vw, 38px);
   width: auto;
   filter: drop-shadow(0 0 8px var(--accent-glow));
   transition: transform 0.3s ease;
@@ -749,7 +826,7 @@ body.menu-open {
 }
 
 .brand-highways {
-  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 900;
   letter-spacing: 1px;
   background: linear-gradient(to bottom, #ff4c4c 0%, #a00000 50%, #4a0000 100%);
@@ -761,7 +838,7 @@ body.menu-open {
 }
 
 .brand-year {
-  font-size: clamp(1rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
   font-weight: 900;
   color: #d4af37;
   letter-spacing: 1px;
@@ -821,7 +898,7 @@ body.menu-open {
   color: var(--gofun);
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.95rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: color 0.3s;
@@ -894,7 +971,7 @@ body.menu-open {
   justify-content: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(circle at center, #161B22 0%, var(--midnight) 100%);
+  background: radial-gradient(circle at center, rgba(var(--accent-color-rgb, 239, 35, 60), 0.1) 0%, var(--midnight) 100%);
 }
 
 .hero::before {
@@ -905,7 +982,7 @@ body.menu-open {
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(239, 35, 60, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   border-radius: 50%;
   z-index: 0;
   pointer-events: none;
@@ -1088,17 +1165,14 @@ body.menu-open {
 .date-badge {
   display: inline-block;
   padding: 8px 30px;
-  background: var(--indigo);
-  background: rgba(255, 255, 255, 0.05);
-  /* Changed from var(--indigo) to white tint */
+  background: rgba(var(--accent-color-rgb, 255, 255, 255), 0.05);
   color: var(--gofun);
   font-size: 1.8rem;
   font-weight: 900;
   border-radius: 2px;
   margin: 1.5rem 0;
-  box-shadow: 0 0 40px rgba(30, 42, 71, 0.5);
+  box-shadow: 0 0 40px var(--accent-glow);
   border: 2px solid var(--accent-color);
-  /* Changed from var(--kin) */
 }
 
 .hero-info {
@@ -1175,23 +1249,35 @@ body.menu-open {
 
 .countdown-item {
   background: rgba(248, 244, 232, 0.05);
-  padding: 15px 25px;
-  border-radius: 2px;
-  border: 1px solid var(--kin);
+  padding: 20px 30px;
+  border-radius: 8px;
+  border: 2px solid var(--kin);
+  backdrop-filter: blur(10px);
+  min-width: 90px;
+  transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--accent-glow);
 }
 
 .countdown-item span {
   display: block;
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.5rem;
+  font-weight: 900;
   color: var(--kin);
+  text-shadow: 0 0 20px var(--accent-glow);
+  font-family: 'Outfit', sans-serif;
 }
 
 .countdown-item p {
-  font-size: 0.8rem;
-  color: #888;
-  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gofun);
+  margin: 5px 0 0;
   text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
 
 .hero-tagline {
@@ -1272,12 +1358,12 @@ body.menu-open {
 .lantern-body {
   width: 40px;
   height: 50px;
-  background: var(--indigo);
+  background: rgba(var(--accent-color-rgb, 239, 35, 60), 0.3);
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(30, 42, 71, 0.8);
+  box-shadow: 0 0 25px var(--accent-glow);
   border: 2px solid var(--kin);
 }
 
@@ -2645,6 +2731,7 @@ section.reveal-active::after {
 
   .logo-img-svce {
     height: 32px;
+    z-index: 1100;
   }
 
   .brand-highways {
@@ -2653,7 +2740,12 @@ section.reveal-active::after {
   }
 
   .brand-year {
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .logo-container {
+    z-index: 1100;
+    position: relative;
   }
 
   /* Mobile Menu - High-End Aesthetic */
@@ -2765,6 +2857,11 @@ section.reveal-active::after {
   .countdown-container {
     gap: 10px;
     margin-top: 40px;
+  }
+
+  .timer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 400px !important;
   }
 
   .countdown-item {

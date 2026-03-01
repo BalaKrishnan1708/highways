@@ -14,14 +14,16 @@ import Home from './pages/Home'
 import Events from './pages/Events'
 import Sponsors from './pages/Sponsors'
 import Team from './pages/Team'
+import FAQ from './pages/FAQ'
+import About from './pages/About'
 
 function App() {
-  const [world, setWorld] = useState<'heikai' | 'wakai' | 'hankai'>('heikai')
+  const [world, setWorld] = useState<'heikai' | 'wakai' | 'hankai' | 'peace' | 'golden'>('heikai')
 
   useEffect(() => {
     const interval = setInterval(() => {
       setWorld(prev => {
-        const worlds = ['heikai', 'wakai', 'hankai'] as const
+        const worlds = ['heikai', 'wakai', 'hankai', 'peace', 'golden'] as const
         const currentIndex = worlds.indexOf(prev)
         return worlds[(currentIndex + 1) % worlds.length]
       })
@@ -55,6 +57,8 @@ function App() {
         <div className="world-overlay heikai-overlay" />
         <div className="world-overlay wakai-overlay" />
         <div className="world-overlay hankai-overlay" />
+        <div className="world-overlay peace-overlay" />
+        <div className="world-overlay golden-overlay" />
 
         {/* Global Japan Texture Overlay */}
         <div className="matsuri-overlay" />
@@ -70,6 +74,8 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/sponsors" element={<Sponsors />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<Home world={world} />} />
           </Routes>
         </main>
