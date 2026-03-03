@@ -906,7 +906,13 @@ body.menu-open {
   text-align: center;
 }
 
-/* Removed Japan-specific titles and world colors */
+.hero-main-branding {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
 .hero-title-main {
   font-size: 3.5rem;
   margin-top: 4rem;
@@ -915,9 +921,9 @@ body.menu-open {
 
 .highways-26-text {
   font-size: clamp(4rem, 12vw, 11rem);
-  /* Reduced to prevent 100% zoom clipping */
   line-height: 0.9;
   margin: 0;
+  text-align: center;
   font-weight: 950;
   text-transform: uppercase;
   font-family: 'Outfit', sans-serif;
@@ -3354,12 +3360,8 @@ section.reveal-active::after {
   }
 
   .highways-26-text {
-    font-size: 13vw !important;
-    /* Fluid scaling to prevent clipping */
-    letter-spacing: -1vw !important;
-    text-shadow:
-      1px 1px 0px #000,
-      2px 2px 10px rgba(0, 0, 0, 0.8) !important;
+    font-size: 11vw !important;
+    letter-spacing: -0.5vw !important;
   }
 
   .hero-title-main {
