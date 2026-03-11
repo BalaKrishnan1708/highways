@@ -3,17 +3,17 @@ const Glimpses = () => {
         {
             year: "23",
             fullName: "Highways 2023",
-            images: ['2.webp', '4.webp', '6.webp', '8.png', '9.png', '10.png', '11.png', '12.png', '13.png', '14.png', '15.png', '16.png', '17.png', '18.png', '19.png']
+            images: ['2.webp', '4.webp', '6.webp', '8.webp', '9.webp', '10.webp', '11.webp', '12.webp', '13.webp', '14.webp', '15.webp', '16.webp', '17.webp', '18.webp', '19.webp']
         },
         {
             year: "24",
             fullName: "Highways 2024",
-            images: ['1.JPG', '3.JPG', '5.JPG', '7.JPG']
+            images: ['1.webp', '3.webp', '5.webp', '7.webp']
         },
         {
             year: "25",
             fullName: "Highways 2025",
-            images: ['20.png', '21.png', '22.png', '23.png', '24.png', '25.png', '26.png', '27.png', '28.png', '29.png', '30.png', '31.png', '32.png', '33.png']
+            images: ['20.webp', '21.webp', '22.webp', '23.webp', '24.webp', '25.webp', '26.webp', '27.webp', '28.webp', '29.webp', '30.webp', '31.webp', '32.webp', '33.webp']
         }
     ];
 
@@ -65,7 +65,7 @@ const Glimpses = () => {
                                     position: 'relative',
                                     cursor: 'pointer'
                                 }}>
-                                    <img src={`/assets/glimpses/Highways ${yearGroup.year}/${img}`} alt={`${yearGroup.fullName} Moment`} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(0.3) brightness(0.8)' }} />
+                                    <img src={`/assets/glimpses/Highways ${yearGroup.year}/${img}`} alt={`${yearGroup.fullName} Moment`} loading="eager" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(0.3) brightness(0.8)' }} />
                                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)', opacity: 0.6 }}></div>
                                 </div>
                             ))}

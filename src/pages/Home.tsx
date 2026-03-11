@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import HighwaysLogo from "../assets/logos/highways-logo.png";
+const HighwaysLogo = "/assets/logos/highways-logo.webp";
 
 const Home = () => {
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -187,19 +187,19 @@ const Home = () => {
                             year: "2023", 
                             folder: "Highways 23", 
                             speed: "slow",
-                            images: ['15.png', '9.png', '4.webp', '12.png', '18.png', '6.webp', '14.png', '10.png', '19.png', '2.webp', '11.png', '17.png', '8.png', '13.png', '16.png'] 
+                            images: ['15.webp', '9.webp', '4.webp', '12.webp', '18.webp', '6.webp', '14.webp', '10.webp', '19.webp', '2.webp', '11.webp', '17.webp', '8.webp', '13.webp', '16.webp'] 
                         },
                         { 
                             year: "2024", 
                             folder: "Highways 24", 
                             speed: "med",
-                            images: ['5.JPG', '1.JPG', '7.JPG', '3.JPG'] 
+                            images: ['5.webp', '1.webp', '7.webp', '3.webp'] 
                         },
                         { 
                             year: "2025", 
                             folder: "Highways 25", 
                             speed: "fast",
-                            images: ['31.png', '24.png', '20.png', '28.png', '33.png', '22.png', '26.png', '30.png', '21.png', '29.png', '25.png', '32.png', '23.png', '27.png'] 
+                            images: ['31.webp', '24.webp', '20.webp', '28.webp', '33.webp', '22.webp', '26.webp', '30.webp', '21.webp', '29.webp', '25.webp', '32.webp', '23.webp', '27.webp'] 
                         }
                     ].map((track) => (
                         <div key={track.year} className="track-row-wrapper" style={{ 
@@ -249,7 +249,7 @@ const Home = () => {
                                     <div key={`${track.year}-${i}`} className="glimpse-frame" style={{
                                         transform: i % 2 === 0 ? 'translateY(20px)' : 'translateY(-20px)'
                                     }}>
-                                        <img src={`/assets/glimpses/${track.folder}/${img}`} alt={`Highways ${track.year}`} />
+                                        <img src={`/assets/glimpses/${track.folder}/${img}`} alt={`Highways ${track.year}`} loading="eager" />
                                     </div>
                                 ))}
                             </div>

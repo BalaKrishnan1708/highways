@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import svceLogo from '../assets/logos/svce-logo.png';
+const svceLogo = "/assets/logos/svce-logo.webp";
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
