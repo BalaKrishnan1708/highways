@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import LoadingScreen from './components/LoadingScreen'
+import PreFooter from './components/PreFooter'
 
 // Pages
 import Home from './pages/Home'
@@ -40,6 +41,7 @@ function App() {
           </Routes>
         </main>
 
+        <PreFooter />
         <Footer />
       </div>
     </Router>
