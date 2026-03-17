@@ -1,7 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './LoadingScreen.css';
-import { teamData } from '../data/teamData';
-import { glimpsesImages } from '../data/glimpsesData';
 
 const LoadingScreen: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -13,46 +11,63 @@ const LoadingScreen: React.FC = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // List of critical assets to preload
-    const essentialAssets = [
+    // List of critical assets to preload for a clear first impression
+    const essentialImages = [
       '/assets/logos/highways-logo.webp',
       '/assets/logos/svce-logo.webp',
-      ...teamData.flatMap(group => group.members.map(m => m.image)),
-      ...glimpsesImages.map(img => `/assets/glimpses/${img}`)
+      // Adding back top-level background assets for clarity
+      'https://images.unsplash.com/photo-1522383225053-ed111181a951?q=80&w=2000&auto=format&fit=crop',
     ];
 
+    const essentialVideos = [
+      '/videos/IMG_0151.MOV'
+    ];
+
+    const totalAssets = essentialImages.length + essentialVideos.length;
     let loadedCount = 0;
-    const totalImages = essentialAssets.length;
 
     const updateProgress = () => {
       loadedCount++;
-      const newProgress = Math.floor((loadedCount / totalImages) * 100);
+      const newProgress = Math.floor((loadedCount / totalAssets) * 100);
       setProgress(newProgress);
     };
 
-    // Preload function
-    const preloadImages = async () => {
-      const promises = essentialAssets.map(src => {
+    const preloadAssets = async () => {
+      // Preload Images
+      const imagePromises = essentialImages.map(src => {
         return new Promise((resolve) => {
           const img = new Image();
-          // @ts-ignore - fetchPriority is supported in modern browsers
+          // @ts-ignore
           img.fetchPriority = 'high';
           img.src = src;
-          // Ignore ts issues with image onload
           img.onload = () => { updateProgress(); resolve(null); };
-          img.onerror = () => { updateProgress(); resolve(null); }; 
+          img.onerror = () => { updateProgress(); resolve(null); };
         });
       });
-      await Promise.all(promises);
+
+      // Preload Videos (Wait for enough data to play)
+      const videoPromises = essentialVideos.map(src => {
+        return new Promise((resolve) => {
+          const video = document.createElement('video');
+          video.src = src;
+          video.preload = 'auto';
+          video.oncanplaythrough = () => { updateProgress(); resolve(null); };
+          video.onerror = () => { updateProgress(); resolve(null); };
+          // Fallback if canplaythrough takes too long on slow connections
+          setTimeout(() => resolve(null), 5000); 
+        });
+      });
+
+      await Promise.all([...imagePromises, ...videoPromises]);
       
-      // Wait until all images are successfully loaded, then transition
-      setIsLoading(false);
+      // Artificial slight delay for smooth transition
       setTimeout(() => {
-        setShouldRender(false);
-      }, 1000);
+        setIsLoading(false);
+        setTimeout(() => setShouldRender(false), 1000);
+      }, 500);
     };
 
-    preloadImages();
+    preloadAssets();
 
     const handleMouseMove = (e: MouseEvent) => {
       setMousePos({ x: e.clientX, y: e.clientY });

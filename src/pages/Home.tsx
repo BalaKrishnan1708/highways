@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Glimpses from './Glimpses';
+
+const Glimpses = lazy(() => import('./Glimpses'));
 
 const HighwaysLogo = "/assets/logos/highways-logo.webp";
 
@@ -220,7 +221,9 @@ const Home = () => {
             </div>
 
             {/* GLIMPSES SECTION */}
-            <Glimpses />
+            <Suspense fallback={null}>
+                <Glimpses />
+            </Suspense>
         </div>
     );
 };
