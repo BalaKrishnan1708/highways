@@ -41,10 +41,10 @@ const Sponsors = () => {
                             className="sponsor-card"
                         >
                             <div className="sponsor-logo-wrap">
-                                <img 
-                                    src={sponsor.logo} 
-                                    alt={sponsor.name} 
-                                    className="sponsor-logo" 
+                                <img
+                                    src={sponsor.logo}
+                                    alt={sponsor.name}
+                                    className="sponsor-logo"
                                     style={sponsor.name === "Xmold Polymers" ? { width: '80px', height: '80px', margin: '20px' } : {}}
                                 />
                                 <div className="sponsor-tier-badge">{sponsor.tier}</div>
@@ -62,7 +62,7 @@ const Sponsors = () => {
             <style>{`
                 .sponsors-page {
                     min-height: 100vh;
-                    background: #050505;
+                    background: transparent;
                     padding: 150px 0 100px;
                     color: white;
                 }

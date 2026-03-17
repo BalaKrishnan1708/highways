@@ -9,7 +9,7 @@ const Team = () => {
     return (
         <section className="team-page-v3" style={{ 
             paddingTop: 'clamp(100px, 15vh, 150px)', 
-            background: '#050505', 
+            background: 'transparent', 
             minHeight: '100vh', 
             color: 'white',
             overflowX: 'hidden',

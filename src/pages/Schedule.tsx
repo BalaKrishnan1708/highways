@@ -25,7 +25,7 @@ interface DayTheme {
 const dayThemes: DayTheme[] = [
     {
         id: 1,
-        name: "IGNITION",
+        name: "Peace",
         label: "APRIL 09",
         color: "#e8729a",
         secondary: "#ffffff",
@@ -36,7 +36,7 @@ const dayThemes: DayTheme[] = [
     },
     {
         id: 2,
-        name: "OVERDRIVE",
+        name: "Balance",
         label: "APRIL 10",
         color: "#f5e6c8",
         secondary: "#1a1008",
@@ -47,7 +47,7 @@ const dayThemes: DayTheme[] = [
     },
     {
         id: 3,
-        name: "DESTINY",
+        name: "Inversion",
         label: "APRIL 11",
         color: "#ff0000",
         secondary: "#ffffff",
@@ -186,13 +186,13 @@ const Schedule = () => {
                                 fontSize: 'clamp(3rem, 10vw, 10rem)',
                                 fontWeight: 950,
                                 textTransform: 'uppercase',
-                                letterSpacing: activeTheme.id === 1 ? '15px' : (activeTheme.id === 3 ? '-10px' : '-4px'),
+                                letterSpacing: activeTheme.id === 1 ? '0px' : (activeTheme.id === 3 ? '-10px' : '-4px'),
                                 lineHeight: 0.8,
-                                color: 'white'
+                                color: 'white',
+                                whiteSpace: 'nowrap'
                             }}>
-                                THE <span style={{ color: activeTheme.color }}>CHRONIC</span>
+                                THE <span style={{ color: activeTheme.color }}>CHRONICS</span>
                             </h2>
-                            <h2 style={{ fontSize: '3vw', fontWeight: 900, letterSpacing: '20px', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', marginTop: '1rem' }}>SAGA OF EVENTS</h2>
                         </motion.div>
                     </AnimatePresence>
                 </motion.div>

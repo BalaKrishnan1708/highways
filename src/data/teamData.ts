@@ -140,7 +140,7 @@ export const teamData: TeamGroup[] = [
         "name": "VIGILANCE",
         "members": [
             { "name": "Venkat Sri Charan U", "role": "Sub lead", "spirit": "The Guardian", "image": "/members/IMG_20250904_182443 - VENKAT SRI CHARAN U ECE.jpg", "imagePosition": "center 10%" },
-            { "name": "MUTHUVEERAN D", "role": "Sub lead", "spirit": "The Captain", "image": "/members/IMG20250513171011 - MUTHUVEERAN D CSE.jpg", "imagePosition": "center 10%" },
+            { "name": "MUTHUVEERAN D", "role": "Member", "spirit": "The Captain", "image": "/members/IMG20250513171011 - MUTHUVEERAN D CSE.jpg", "imagePosition": "center 10%" },
             { "name": "Saranraj S", "role": "Member", "spirit": "The Sentinel", "image": "/members/IMG-20260304-WA0101 - SARANRAJ S EEE.jpg", "imagePosition": "center 10%" },
             { "name": "Thannigaipriya P S", "role": "Member", "spirit": "The Watcher", "image": "/members/Thannigaipriya P S _Member_Vigilance wing - THANNIGAIPRIYA PS EEE.jpg", "imagePosition": "center 10%" },
             { "name": "A.Bharath Rajh", "role": "Member", "spirit": "THE APEX TITAN", "image": "/members/Bharath Rajh_Member_Vigilance Wing - 011_A.BHARATH RAJH _MECH", "imagePosition": "center 15%" },
