@@ -117,7 +117,7 @@ const Home = () => {
                                 HIGHWAYS, the flagship fest of SVCE, continues to inspire, empower and entertain students with its showcase of cultural brilliance and artistic vitality. It offers a powerful stage for participants to express themselves, celebrate creativity and unveil their hidden talents.
                             </p>
                             <p style={{ fontSize: 'clamp(0.95rem, 3.5vw, 1.1rem)', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, fontWeight: 300 }}>
-                                Uniting students from diverse backgrounds and traditions, HIGHWAYS 26 promises an unforgettable experience with a spectacular lineup of culturally rich performances and vibrant non-technical showcases.
+                                Uniting students from diverse backgrounds and traditions, HIGHWAYS '26 promises an unforgettable experience with a spectacular lineup of culturally rich performances and vibrant non-technical showcases. It stands as a celebration of talent, unity and the true spirit of festivity.
                             </p>
                         </motion.div>
 
@@ -134,10 +134,10 @@ const Home = () => {
                         >
                             <h2 className="section-title left uppercase" style={{ fontSize: 'clamp(2rem, 6vw, 2.5rem)', marginBottom: '1.5rem', fontFamily: '"Orbitron", sans-serif', letterSpacing: '2px' }}>ABOUT <span style={{ color: '#ffffff' }}>SVCE</span></h2>
                             <p style={{ fontSize: 'clamp(1rem, 4vw, 1.25rem)', color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: '1.5rem', fontWeight: 300 }}>
-                                Sri Venkateswara College of Engineering (SVCE), established in 1985, is a leading engineering institution in Tamil Nadu. Guided by Dr. A.C. Muthiah, an industrialist and philanthropist, SVCE became the first private engineering college in Chennai to receive Autonomous status.
+                                Sri Venkateswara College of Engineering (SVCE), established in 1985, is a leading engineering institution in Tamil Nadu. Guided by Dr. A.C. Muthiah, an industrialist and philanthropist, SVCE became the first private engineering college in Chennai to receive Autonomous status from UGC. Accredited by NAAC, its 12 B.E./B.Tech. and 9 M.E./M.Tech. programs are affiliated with Anna University.
                             </p>
                             <p style={{ fontSize: 'clamp(0.95rem, 3.5vw, 1.1rem)', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, fontWeight: 300 }}>
-                                Accredited by NAAC, its programs are affiliated with Anna University. The college maintains a stellar placement record and features cutting-edge infrastructure across its 95-acre campus in Sriperumbudur.
+                                The college maintains a stellar placement record, with over 96% of eligible students placed annually in 150+ companies. SVCE has a distinguished alumni network of over 22,000 professionals in top brands like Apple, Google, and Amazon, and has produced 100+ successful entrepreneurs. Situated in Sriperumbudur's industrial corridor, its 95-acre campus features cutting-edge infrastructure, ICT-enabled facilities, and lush greenery.
                             </p>
                         </motion.div>
 
